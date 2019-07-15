@@ -109,7 +109,7 @@
                         <img height="100px" width="auto" src="/images/instagram.svg">
                     </div>
                     <div class="col-4">
-                        <img height="100px" width="auto" src="/images/mail.svg" class="float-left">
+                        <a href="{{ route('contact') }}"><img height="100px" width="auto" src="/images/mail.svg" class="float-left"></a>
                     </div>
                 </div>
             </div>
