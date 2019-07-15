@@ -17970,6 +17970,7 @@ header.masthead h1 {
 }
 
 footer.footer {
+  box-shadow: 0 50vh 0 50vh #e94e1b;
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
