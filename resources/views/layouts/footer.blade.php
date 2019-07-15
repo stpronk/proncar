@@ -12,7 +12,7 @@
 {{--                    </li>--}}
 {{--                    <li class="list-inline-item text-white">&sdot;</li>--}}
 {{--                </ul>--}}
-                <p class="small mb-4 mb-lg-0">&copy; Proncar ~ 2018. <br>
+                <p class="small mb-4 mb-lg-0">&copy; Proncar ~ 2017. <br>
                     Made with love by <a class="text-white" href="https://stpronk.nl/">StPronk</a></p>
             </div>
             <div class="col-lg-6 h-100 text-center small text-lg-right my-auto">

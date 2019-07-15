@@ -31,66 +31,79 @@
     <div class="overlay"></div>
 </header>
 
-<section>
     <section class="call-to-action bg-light">
         <div class="container">
             <div class="row no-gutters">
 
                 <div class="col-12 row text-center">
-                    <div class="col-md-3"></div>
-                    <h2 class="col-md-9 col-12 mb-4 text-center">Contact us!</h2>
+                    <h2 class="col-12 mb-4 text-center">Contact us!</h2>
                 </div>
 
-                <form class="form-group col-12 text-left text-md-right px-4">
+                <form class="form-group col-12 font-weight-bold px-4 mb-6">
                     <div class="form-group row">
-                        <label class="col-form-label col-12 col-md-3" for="email" type="email">E-mail Address</label>
-                        <input class="form-control col-12 col-md-9" name="email" id="email" type="email" value="" placeholder="">
+                        <label class="col-form-label col-12" for="email" type="email">E-mail Address</label>
+                        <input class="form-control col-12" name="email" id="email" type="email" value="" placeholder="">
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-form-label col-12 col-md-3" for="phone" type="text">Phone number</label>
-                        <input class="form-control col-12 col-md-9" name="phone" id="phone" type="text" value="" placeholder="">
+                        <label class="col-form-label col-12" for="phone" type="text">Phone number</label>
+                        <input class="form-control col-12" name="phone" id="phone" type="text" value="" placeholder="">
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-form-label col-12 col-md-3" for="name" type="text">Name</label>
-                        <input class="form-control col-12 col-md-9" name="name" id="name" type="text" value="" placeholder="">
+                        <label class="col-form-label col-12" for="name" type="text">Name</label>
+                        <input class="form-control col-12" name="name" id="name" type="text" value="" placeholder="">
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-form-label col-12 col-md-3" for="subject" type="text">Subject</label>
-                        <input class="form-control col-12 col-md-9" name="subject" id="subject" type="text" value="" placeholder="">
+                        <label class="col-form-label col-12" for="subject" type="text">Subject</label>
+                        <input class="form-control col-12" name="subject" id="subject" type="text" value="" placeholder="">
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-form-label col-12 col-md-3" for="message">Message</label>
-                        <textarea class="form-control col-12 col-md-9" name="message" id="subject" type="text" rows="8"></textarea>
+                        <label class="col-form-label col-12" for="message">Message</label>
+                        <textarea class="form-control col-12" name="message" id="subject" type="text" rows="8"></textarea>
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-3"></div>
-                        <button class="btn btn-block btn-primary btn-lg col-md-9 col-12" type="submit">Send</button>
+                        <button class="btn btn-block btn-primary btn-lg col-12" type="submit">Send</button>
                     </div>
-
                 </form>
-                <div class="col-12 text-center">
+
+            </div>
+        </div>
+    </section>
+
+<section class="features-icons text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 mx-auto">
+                <h2 class="mb-5">Also follow us on social media!</h2>
+                <div class="col-xl-8 mx-auto">
                     <div class="row">
-                        <div class="col-md-3 d-sm-none d-md-block"></div>
-                        <div class="col-md-9 col-12">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img height="100px" width="auto" src="/images/facebook.svg" class="float-right">
-                                </div>
-                                <div class="col-6">
-                                    <img height="100px" width="auto" src="/images/instagram.svg" class="float-left">
-                                </div>
+                        <div class="col-lg-6">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                <a class="text-decoration-none features-icons-icon d-flex" href="https://www.facebook.com/Proncar-468839900135515/" target="_blank">
+                                    <i class="icon-social-facebook m-auto text-primary"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                                <a class="text-decoration-none features-icons-icon d-flex" href="https://www.instagram.com/proncar_zoetermeer/" target="_blank">
+                                    <i class="icon-social-instagram m-auto text-primary"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<section class="company-info">
+    <!-- todo -->
 </section>
 
 <!-- Footer -->
