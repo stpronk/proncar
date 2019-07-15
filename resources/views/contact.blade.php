@@ -49,7 +49,7 @@
 
                     <div class="form-group row">
                         <label class="col-form-label col-12 col-md-3" for="phone" type="text">Phone number</label>
-                        <input class="form-control col-12 col-md-9" name="phone" id="phone" type="text" value="" placeholder="">
+                        <input class="form-control col-12 col-md-9" name="phone" id="phone" type="text" value="" placeholder="">`
                     </div>
 
                     <div class="form-group row">
