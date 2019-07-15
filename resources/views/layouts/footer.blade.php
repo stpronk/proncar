@@ -13,26 +13,12 @@
 {{--                    <li class="list-inline-item text-white">&sdot;</li>--}}
 {{--                </ul>--}}
                 <p class="small mb-4 mb-lg-0">&copy; Proncar ~ 2018. <br>
-                    Made with love by <a href="https://stpronk.nl/">StPronk</a></p>
+                    Made with love by <a class="text-white" href="https://stpronk.nl/">StPronk</a></p>
             </div>
-            <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item mr-3">
-                        <a href="#">
-                            <i class="fab fa-facebook fa-2x fa-fw text-white"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item mr-3">
-                        <a href="#">
-                            <i class="fab fa-twitter-square fa-2x fa-fw text-white"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-instagram fa-2x fa-fw text-white"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="col-lg-6 h-100 text-center small text-lg-right my-auto">
+               <a class="text-white" href="{{ route('voorwaarden') }}">
+                   Algemene voorwaarden
+               </a>
             </div>
         </div>
     </div>
