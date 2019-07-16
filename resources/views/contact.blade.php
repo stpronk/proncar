@@ -78,14 +78,14 @@
                 <h2 class="mb-5">Also follow us on social media!</h2>
                 <div class="col-xl-8 mx-auto">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-6">
                             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <a class="text-decoration-none features-icons-icon d-flex" href="https://www.facebook.com/Proncar-468839900135515/" target="_blank">
                                     <i class="icon-social-facebook m-auto text-primary"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-6">
                             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <a class="text-decoration-none features-icons-icon d-flex" href="https://www.instagram.com/proncar_zoetermeer/" target="_blank">
                                     <i class="icon-social-instagram m-auto text-primary"></i>
