@@ -28,9 +28,7 @@
 
 <!-- Masthead -->
 @include('layouts.header')
-
-
-    <section class="call-to-action bg-light">
+    <section class="call-to-action bg-white">
         <div class="container">
             <div class="row no-gutters">
 
@@ -73,7 +71,7 @@
         </div>
     </section>
 
-<section class="features-icons text-center">
+<section class="features-icons text-center bg-light">
     <div class="container">
         <div class="row">
             <div class="col-xl-12 mx-auto">
