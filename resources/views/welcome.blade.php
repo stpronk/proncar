@@ -86,27 +86,29 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-9 mx-auto">
-                <h2 class="mb-5">Follow us on social media or contact us!</h2>
+                <h2 class="mb-5">Come in touch with us!</h2>
                 <div class="col-xl-9 mx-auto">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-6">
                             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <a class="text-decoration-none features-icons-icon d-flex" href="https://www.facebook.com/Proncar-468839900135515/" target="_blank">
                                     <i class="icon-social-facebook m-auto text-primary"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-6">
                             <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <a class="text-decoration-none features-icons-icon d-flex" href="https://www.instagram.com/proncar_zoetermeer/" target="_blank">
                                     <i class="icon-social-instagram m-auto text-primary"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                                <a class="text-decoration-none features-icons-icon d-flex" href="{{ route('contact') }}">
-                                    <i class="icon-pencil m-auto text-primary"></i>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <div class="features-icons-item mx-auto my-5 mb-lg-0 mb-lg-3">
+                                <a class="text-decoration-none d-flex text-center" href="{{ route('contact') }}">
+                                    <button class="btn btn-lg btn-outline-primary w-100">Contact me!</button>
                                 </a>
                             </div>
                         </div>
