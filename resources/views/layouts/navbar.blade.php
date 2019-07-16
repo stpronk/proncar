@@ -35,7 +35,7 @@
 
                 @if(Auth::check())
                     <li class="nav-item p-2">
-                        <a class="nav-link" href="{{ route('home') }}">
+                        <a class="nav-link" href="{{ route('dashboard.index') }}">
                             <i class="icon-wrench text-primary"></i>
                         </a>
                     </li>
