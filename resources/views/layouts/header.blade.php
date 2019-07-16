@@ -1,4 +1,4 @@
-<header class="masthead text-white text-center{{ isset($logo) ? '' : ' d-sm-none' }}">
+<header class="masthead text-white text-center{{ isset($logo) ? '' : ' d-none d-md-block' }}">
     <div class="overlay"></div>
     @if ($logo ?? false)
     <div class="container">
