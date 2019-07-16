@@ -32,6 +32,14 @@
                 <li class="nav-item p-2">
                     <a class="btn btn-primary" href="{{ route('contact') }}">Contact</a>
                 </li>
+
+                @if(Auth::check())
+                    <li class="nav-item p-2">
+                        <a class="nav-link" href="{{ route('home') }}">
+                            <i class="icon-wrench text-primary"></i>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>
