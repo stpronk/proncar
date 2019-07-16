@@ -39,7 +39,7 @@ Route::group([], function(){
 });
 
 // Auth routes
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 // Admin panel routes
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
