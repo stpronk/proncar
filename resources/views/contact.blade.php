@@ -32,8 +32,8 @@
         <div class="container">
             <div class="row no-gutters">
 
-                <div class="col-12 row text-center">
-                    <h2 class="col-12 mb-4 text-center">Contact us!</h2>
+                <div class="col-12 row">
+                    <h2 class="col-12 mb-4 text-center text-primary">Contact us!</h2>
                 </div>
 
                 <form class="form-group col-12 font-weight-bold px-4 mb-6">
