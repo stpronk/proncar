@@ -27,9 +27,8 @@
 @include('layouts.navbar')
 
 <!-- Masthead -->
-<header class="masthead text-white text-center" style="padding-top: 7rem; padding-bottom: 7rem">
-    <div class="overlay"></div>
-</header>
+@include('layouts.header')
+
 
     <section class="call-to-action bg-light">
         <div class="container">
