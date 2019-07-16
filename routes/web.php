@@ -11,30 +11,37 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+// Pages
+Route::group([], function(){
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('welcome');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
 
-Route::get('/activities', function () {
-    return view('activities');
-})->name('activities');
+    Route::get('/activities', function () {
+        return view('activities');
+    })->name('activities');
 
-Route::get('/portfolio', function () {
-    return view('portfolio');
-})->name('portfolio');
+    Route::get('/portfolio', function () {
+        return view('portfolio');
+    })->name('portfolio');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+    Route::get('/contact', function () {
+        return view('contact');
+    })->name('contact');
 
-Route::get('/voorwaarden', function () {
-    return view('voorwaarden');
-})->name('voorwaarden');
+    Route::get('/voorwaarden', function () {
+        return view('voorwaarden');
+    })->name('voorwaarden');
+});
 
-Auth::routes();
+// Auth routes
+Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Admin panel routes
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
+    Route::get('/', 'dashboardController@index')->name('dashboard.index');
+});
