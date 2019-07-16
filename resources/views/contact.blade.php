@@ -5,7 +5,7 @@
     <!-- Masthead -->
     @include('layouts.header')
 
-    <section class="call-to-action bg-white">
+    <section class="contact-form bg-white">
         <div class="container">
             <div class="row no-gutters">
 
