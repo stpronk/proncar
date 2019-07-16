@@ -106,7 +106,7 @@
                     </div>
                     <div class="row">
                         <div class="col-6 mx-auto">
-                            <div class="features-icons-item mx-auto my-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                 <a class="text-decoration-none d-flex text-center" href="{{ route('contact') }}">
                                     <button class="btn btn-lg btn-outline-primary w-100">Contact me!</button>
                                 </a>
