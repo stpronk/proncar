@@ -1,4 +1,4 @@
-<header class="masthead text-white text-center" {{ isset($logo) ? '' : 'style="padding-top: 7vh; padding-bottom: 7vh"' }}>
+<header class="masthead text-white text-center" {{ isset($logo) ? '' : 'style="padding-top: 5vh; padding-bottom: 5vh"' }}>
     <div class="overlay"></div>
     @if ($logo ?? false)
     <div class="container">
