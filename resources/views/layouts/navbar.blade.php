@@ -15,7 +15,7 @@
             </ul>
 
             <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto text-center">
+            <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item p-2">
                     <a class="nav-link" href="{{ route('about') }}">About</a>
