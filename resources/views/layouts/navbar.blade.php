@@ -17,21 +17,11 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item p-2">
-                    <a class="nav-link" href="{{ route('about') }}">About</a>
-                </li>
-
-                <li class="nav-item p-2">
-                    <a class="nav-link" href="{{ route('activities') }}">Activities</a>
-                </li>
-
-                <li class="nav-item p-2">
-                    <a class="nav-link" href="{{ route('portfolio') }}">Portfolio</a>
-                </li>
-
-                <li class="nav-item p-2">
-                    <a class="btn btn-primary" href="{{ route('contact') }}">Contact</a>
-                </li>
+                @foreach($items as $key => $values)
+                    <li class="nav-item p-2">
+                        <a class="{{ $values['class'] ?? 'nav-link' }}" href="{{ route($values['url']) }}">{{ $values['name'] }}</a>
+                    </li>
+                @endforeach
 
                 @if(Auth::check())
                     <li class="nav-item p-2">

@@ -43,7 +43,6 @@
     <section class="showcase">
         <div class="container-fluid p-0">
             <div class="row no-gutters">
-
                 <div class="col-lg-6 order-lg-2 text-white showcase-img background-cover"
                      style="background: url('images/bg-showcase-1.jpg') no-repeat center center;"></div>
                 <div class="col-lg-6 order-lg-1 my-auto showcase-text">
