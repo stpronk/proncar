@@ -17,7 +17,7 @@
                     </div>
                     @if(isset($content['contact']))
                         <div class="row">
-                            <div class="col-md-10 mx-auto">
+                            <div class="col-md-11 mx-auto mt-5">
                                 <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                                     <a class="text-decoration-none d-flex text-center" href="{{ route($content['contact']['route']) }}">
                                         <button class="btn btn-lg btn-outline-primary w-100">{{ $content['contact']['head'] }}</button>

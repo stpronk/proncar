@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends BaseController
 {
@@ -24,5 +26,12 @@ class DashboardController extends BaseController
     public function index()
     {
         return $this->view('dashboard');
+    }
+
+    public function contact(Request $request)
+    {
+        Mail::to(env('MAIL_TO', 'stpronk@gmail.com'))->send(new ContactForm($request->all()));
+
+        return back();
     }
 }

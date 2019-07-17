@@ -31,23 +31,23 @@ class PagesController extends BaseController
         return $this->view('pages.index');
     }
 
-    public function edit()
-    {
-        return $this->view('pages.edit');
-    }
-
     public function create()
     {
         return 'W.I.P.';
     }
 
+    public function edit()
+    {
 
-    public function GeneratePage(PageRequest $pageRequest)
+    }
+
+    public function show(PageRequest $pageRequest)
     {
         $page = $pageRequest->getPageAttributes();
 
         return $this->view($page['template']['blade'], [
             'sections' => $page['sections'],
+            'editable' => $page['index'],
         ]);
     }
 
@@ -58,10 +58,11 @@ class PagesController extends BaseController
             'pages' => [
                 'welcome'     => [
                     'name'     => 'Welcome',
+                    'Title'    => 'Performance',
                     'route'    => [
                         'url'        => '/',
                         'auth'       => false,
-                        'controller' => 'PagesController@GeneratePage',
+                        'controller' => 'PagesController',
                     ],
                     'nav'      => [
                         'hidden' => true,
@@ -153,12 +154,14 @@ class PagesController extends BaseController
                     'uuid'     => Str::uuid(),
                     'hidden'   => true,
                 ],
+
                 'about'       => [
                     'name'     => 'About',
+                    'title'    => 'About',
                     'route'    => [
                         'url'        => '/about',
                         'auth'       => false,
-                        'controller' => 'PagesController@GeneratePage',
+                        'controller' => 'PagesController',
                     ],
                     'nav'      => [
                         'hidden' => false,
@@ -174,12 +177,14 @@ class PagesController extends BaseController
                     'uuid'     => Str::uuid(),
                     'hidden'   => false,
                 ],
+
                 'activities'  => [
                     'name'     => 'Activities',
+                    'title'     => 'Activities',
                     'route'    => [
                         'url'        => '/activities',
                         'auth'       => false,
-                        'controller' => 'PagesController@GeneratePage',
+                        'controller' => 'PagesController',
                     ],
                     'nav'      => [
                         'hidden' => false,
@@ -195,12 +200,14 @@ class PagesController extends BaseController
                     'uuid'     => Str::uuid(),
                     'hidden'   => false,
                 ],
+
                 'portfolio'   => [
                     'name'     => 'Portfolio',
+                    'title'     => 'Portfolio',
                     'route'    => [
                         'url'        => '/portfolio',
                         'auth'       => false,
-                        'controller' => 'PagesController@GeneratePage',
+                        'controller' => 'PagesController',
                     ],
                     'nav'      => [
                         'hidden' => false,
@@ -215,12 +222,14 @@ class PagesController extends BaseController
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
                 ],
+
                 'contact'     => [
                     'name'     => 'Contact',
+                    'title'     => 'Contact',
                     'route'    => [
                         'url'        => '/contact',
                         'auth'       => false,
-                        'controller' => 'PagesController@GeneratePage',
+                        'controller' => 'PagesController',
                     ],
                     'nav'      => [
                         'hidden' => false,
@@ -229,29 +238,78 @@ class PagesController extends BaseController
                     ],
                     'template' => [
                         'id'    => 1,
-                        'blade' => 'contact',
+                        'blade' => 'default',
                     ],
-                    'sections' => [],
+                    'sections' => [
+                        0 => [
+                            'blade'   => 'contact',
+                            'content' => [
+                                'action' => 'dashboard.contact',
+                                'method' => 'POST'
+                            ]
+                        ],
+                        1 => [
+                            'blade' => 'social-media',
+                            'content' => [
+                                'head' => 'You can also find me on social media!',
+                                'items' => [
+                                    0 => [
+                                        'icon' => 'social-facebook',
+                                        'href' => 'https://www.facebook.com/Proncar-468839900135515/'
+                                    ],
+                                    1 => [
+                                        'icon' => 'social-instagram',
+                                        'href' => 'https://www.instagram.com/proncar_zoetermeer/',
+                                    ],
+                                ],
+                                'item_count' => 2,
+                            ]
+                        ],
+                    ],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
                 ],
                 'voorwaarden' => [
                     'name'     => 'Voorwaarden',
+                    'title'     => 'Voorwaarden',
                     'route'    => [
                         'url'        => '/voorwaarden',
                         'auth'       => false,
-                        'controller' => 'PagesController@GeneratePage',
+                        'controller' => 'PagesController',
                     ],
                     'template' => [
                         'id'    => 1,
-                        'blade' => 'voorwaarden',
+                        'blade' => 'default',
                     ],
                     'nav'      => [
                         'hidden' => true,
                         'name'   => 'Voorwaarden',
                         'class'  => null,
                     ],
-                    'sections' => [],
+                    'sections' => [
+                        0 => [
+                        'blade'   => 'text',
+                        'content' => ['body' => '<h1>HTML Ipsum Presents</h1>
+
+<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+<h2>Header Level 2</h2>
+
+<ol>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ol>
+
+<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+<h3>Header Level 3</h3>
+
+<ul>
+   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+   <li>Aliquam tincidunt mauris eu risus.</li>
+</ul>'
+                    ]
+                        ]],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
                 ],

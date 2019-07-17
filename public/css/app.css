@@ -17934,7 +17934,7 @@ header.masthead h1 {
 }
 
 .features-icons .features-icons-item {
-  max-width: 20rem;
+  max-width: 30rem;
   -webkit-animation: linear 0.5s all;
           animation: linear 0.5s all;
 }
@@ -17978,6 +17978,12 @@ footer.footer {
 }
 
 .contact-form {
+  position: relative;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.text-section {
   position: relative;
   padding-top: 7rem;
   padding-bottom: 7rem;

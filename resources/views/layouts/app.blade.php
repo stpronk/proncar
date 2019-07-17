@@ -6,7 +6,7 @@
 <body>
     <div id="app">
         <!-- include navbar -->
-        @include('layouts.navbar', ['items' => $nav])
+        @include('layouts.navbar', ['items' => $nav, 'editable' => $editable ?? null])
 
         <!-- include main -->
         @include('layouts.main')

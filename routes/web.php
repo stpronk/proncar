@@ -39,13 +39,21 @@
 //});
 
 foreach(page_index() as $key => $page){
-    Route::get($page['route']['url'], $page['route']['controller'])->name($key);
+    Route::get($page['route']['url'], $page['route']['controller'].'@show')->name($key);
+
+    Route::group(['middleware' => ['auth']], function () use ($page, $key){
+        Route::get($page['route']['url'].'/edit', $page['route']['controller'].'@edit')->name($key.'.edit');
+        Route::post($page['route']['url'].'/update', $page['route']['controller'].'@store')->name($key.'.store');
+        Route::post($page['route']['url'].'/store', $page['route']['controller'].'@store')->name($key.'.store');
+    });
 };
 
 Route::get('/generate', 'PagesController@generatePages')->name('generate');
 
 // Auth routes
 Auth::routes(['register' => true]);
+
+Route::post('/contact', 'DashboardController@contact')->name('dashboard.contact');
 
 // Admin panel routes
 Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
