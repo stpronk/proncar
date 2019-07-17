@@ -1,4 +1,4 @@
-<header class="masthead text-white text-center{{ isset($content['logo']) ? ' d-none d-md-block' : '' }}">
+<header class="masthead text-white text-center{{ isset($content['logo']) ? '' : ' d-none d-md-block' }}">
     @if(isset($content['overlay']))
         <div class="overlay"></div>
     @endif
