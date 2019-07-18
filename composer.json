@@ -6,6 +6,12 @@
         "framework",
         "laravel"
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/aaronlord/laroute"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.1.3",
