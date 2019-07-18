@@ -84,10 +84,9 @@ class PagesController extends BaseController
                             'blade' => 'header',
                             'content' => [
                                 'overlay' => true,
-                                'logo' => [
-                                    'alt'     => 'proncar_header',
-                                    'src'     => '/images/Logo_web_transparant.png'
-                                ],
+                                'logo' => true,
+                                'alt'  => 'proncar_header',
+                                'src'  => '/images/Logo_web_transparant.png'
                             ]
                         ],
                         1 => [
