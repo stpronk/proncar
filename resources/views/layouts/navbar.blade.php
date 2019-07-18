@@ -19,7 +19,7 @@
             <ul class="navbar-nav ml-auto">
 
                 @foreach($items as $key => $values)
-                    <li class="nav-item p-2 float-right">
+                    <li class="nav-item p-2">
                         <a class="{{ $values['class'] ?? 'nav-link' }}" href="{{ route($values['url']) }}">{{ $values['name'] }}</a>
                     </li>
                 @endforeach
