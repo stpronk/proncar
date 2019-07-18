@@ -1,1 +1,127 @@
-{"pages":{"welcome":{"name":"Welcome","Title":"Performance","route":{"url":"\/","auth":false,"controller":"PagesController"},"nav":{"hidden":true,"name":"Welcome","class":null},"template":{"id":1,"blade":"default"},"type":"get","uuid":"e417e1a8-a0fe-4c51-a0b2-2843820e5db0","hidden":true},"about":{"name":"About","title":"About","route":{"url":"\/about","auth":false,"controller":"PagesController"},"nav":{"hidden":false,"name":"About","class":null},"template":{"id":1,"blade":"about"},"type":"get","uuid":"d439ad49-79ca-4f0f-9797-283f30d75dc5","hidden":false},"activities":{"name":"Activities","title":"Activities","route":{"url":"\/activities","auth":false,"controller":"PagesController"},"nav":{"hidden":false,"name":"Activities","class":null},"template":{"id":1,"blade":"activities"},"type":"get","uuid":"9a006849-7ead-4dbf-a2bb-c7682948eedb","hidden":false},"portfolio":{"name":"Portfolio","title":"Portfolio","route":{"url":"\/portfolio","auth":false,"controller":"PagesController"},"nav":{"hidden":false,"name":"Portfolio","class":null},"template":{"id":1,"blade":"portfolio"},"type":"get","uuid":"5c6f0e25-2141-4abc-b8a2-ac8aada0c0f6"},"contact":{"name":"Contact","title":"Contact","route":{"url":"\/contact","auth":false,"controller":"PagesController"},"nav":{"hidden":false,"name":"Contact","class":"btn btn-primary text-white"},"template":{"id":1,"blade":"default"},"type":"get","uuid":"1de70fe5-facb-4a42-908d-ea5ba47b46d0"},"voorwaarden":{"name":"Voorwaarden","title":"Voorwaarden","route":{"url":"\/voorwaarden","auth":false,"controller":"PagesController"},"template":{"id":1,"blade":"default"},"nav":{"hidden":true,"name":"Voorwaarden","class":null},"type":"get","uuid":"f3455863-6312-4d7d-86cb-b017b3eb70bc"}}}
+{
+  "pages": {
+    "welcome": {
+      "name": "Welcome",
+      "Title": "Performance",
+      "route": {
+        "url": "\/",
+        "auth": false,
+        "controller": "PagesController"
+      },
+      "nav": {
+        "hidden": true,
+        "name": "Welcome",
+        "class": null
+      },
+      "template": {
+        "id": 1,
+        "blade": "default"
+      },
+      "type": "get",
+      "uuid": "e417e1a8-a0fe-4c51-a0b2-2843820e5db0",
+      "hidden": true
+    },
+    "about": {
+      "name": "About",
+      "title": "About",
+      "route": {
+        "url": "\/about",
+        "auth": false,
+        "controller": "PagesController"
+      },
+      "nav": {
+        "hidden": false,
+        "name": "About",
+        "class": null
+      },
+      "template": {
+        "id": 1,
+        "blade": "about"
+      },
+      "type": "get",
+      "uuid": "d439ad49-79ca-4f0f-9797-283f30d75dc5",
+      "hidden": false
+    },
+    "activities": {
+      "name": "Activities",
+      "title": "Activities",
+      "route": {
+        "url": "\/activities",
+        "auth": false,
+        "controller": "PagesController"
+      },
+      "nav": {
+        "hidden": false,
+        "name": "Activities",
+        "class": null
+      },
+      "template": {
+        "id": 1,
+        "blade": "activities"
+      },
+      "type": "get",
+      "uuid": "9a006849-7ead-4dbf-a2bb-c7682948eedb",
+      "hidden": false
+    },
+    "portfolio": {
+      "name": "Portfolio",
+      "title": "Portfolio",
+      "route": {
+        "url": "\/portfolio",
+        "auth": false,
+        "controller": "PagesController"
+      },
+      "nav": {
+        "hidden": false,
+        "name": "Portfolio",
+        "class": null
+      },
+      "template": {
+        "id": 1,
+        "blade": "portfolio"
+      },
+      "type": "get",
+      "uuid": "5c6f0e25-2141-4abc-b8a2-ac8aada0c0f6"
+    },
+    "contact": {
+      "name": "Contact",
+      "title": "Contact",
+      "route": {
+        "url": "\/contact",
+        "auth": false,
+        "controller": "PagesController"
+      },
+      "nav": {
+        "hidden": false,
+        "name": "Contact",
+        "class": "btn btn-primary text-white"
+      },
+      "template": {
+        "id": 1,
+        "blade": "default"
+      },
+      "type": "get",
+      "uuid": "1de70fe5-facb-4a42-908d-ea5ba47b46d0"
+    },
+    "voorwaarden": {
+      "name": "Voorwaarden",
+      "title": "Voorwaarden",
+      "route": {
+        "url": "\/voorwaarden",
+        "auth": false,
+        "controller": "PagesController"
+      },
+      "template": {
+        "id": 1,
+        "blade": "default"
+      },
+      "nav": {
+        "hidden": true,
+        "name": "Voorwaarden",
+        "class": null
+      },
+      "type": "get",
+      "uuid": "f3455863-6312-4d7d-86cb-b017b3eb70bc"
+    }
+  }
+}
