@@ -1910,6 +1910,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     content: {
@@ -2005,14 +2008,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {},
   data: function data() {
-    return {};
+    return {
+      '$routes': window.$routes
+    };
   },
-  logout: function logout() {
-    this.$http.post(route('auth.logout')).then(function (response) {
-      window.location.href = $routes.route('welcome');
-    })["catch"](function (error) {
-      window.location.reload();
-    });
+  methods: {
+    logout: function logout($routes) {
+      this.$http.post($routes.route('logout')).then(function (response) {
+        window.location.href = $routes.route('welcome');
+      })["catch"](function (error) {
+        window.location.reload();
+      });
+    }
   }
 });
 
@@ -37430,7 +37437,7 @@ var render = function() {
                 _c("img", {
                   staticClass: "mb-6 ",
                   attrs: {
-                    width: "100%",
+                    width: "auto",
                     height: "auto",
                     alt: this.content.logo.alt,
                     src: this.content.logo.src
@@ -37510,7 +37517,8 @@ var render = function() {
                     _c(
                       "a",
                       {
-                        class: item.class + " nav-link",
+                        staticClass: "nav-link",
+                        class: item.class,
                         attrs: { href: _vm.$routes.route(item.url) }
                       },
                       [_vm._v(_vm._s(item.name))]
@@ -37566,7 +37574,12 @@ var render = function() {
                     "button",
                     {
                       staticClass: "nav-link btn btn-link",
-                      attrs: { type: "button", href: this.logout() }
+                      attrs: { type: "button" },
+                      on: {
+                        click: function($event) {
+                          return _vm.logout(_vm.$routes)
+                        }
+                      }
                     },
                     [_c("i", { staticClass: "icon-logout text-primary" })]
                   )
@@ -50486,8 +50499,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Steve\websites\Proncar\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Steve\websites\Proncar\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/stevepronk/code/Proncar/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/stevepronk/code/Proncar/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

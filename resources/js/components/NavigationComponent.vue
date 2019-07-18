@@ -21,7 +21,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li v-for="item in this.items" class="nav-item p-2">
-                            <a :class="item.class +' nav-link'" :href="$routes.route(item.url)">{{ item.name }}</a>
+                            <a :class="item.class" class="nav-link" :href="$routes.route(item.url)">{{ item.name }}</a>
                         </li>
 
                     </ul>
@@ -51,7 +51,7 @@
 
 
                     <li class="nav-item px-1">
-                        <button class="nav-link btn btn-link" type="button" :href="this.logout()">
+                        <button class="nav-link btn btn-link" type="button" v-on:click="logout($routes)">
                             <i class="icon-logout text-primary"></i>
                         </button>
                     </li>
@@ -71,14 +71,18 @@
         },
         mounted(){},
         data() {
-            return {}
+            return {
+                '$routes': window.$routes
+            }
         },
-        logout(){
-            this.$http.post(route('auth.logout')).then((response) => {
-                window.location.href = $routes.route('welcome')
-            }).catch(error => {
-                window.location.reload()
-            });
+        methods: {
+            logout: function($routes) {
+                this.$http.post($routes.route('logout')).then((response) => {
+                    window.location.href = $routes.route('welcome')
+                }).catch(error => {
+                    window.location.reload()
+                });
+            }
         }
     }
 </script>

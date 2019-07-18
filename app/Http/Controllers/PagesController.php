@@ -240,7 +240,7 @@ class PagesController extends BaseController
                     'nav'      => [
                         'hidden' => false,
                         'name'   => 'Contact',
-                        'class'  => 'btn btn-primary',
+                        'class'  => 'btn btn-primary text-white',
                     ],
                     'template' => [
                         'id'    => 1,
@@ -323,7 +323,7 @@ class PagesController extends BaseController
         ];
 
         foreach ($page_index['pages'] as $key => &$values) {
-            $this->UpdateOrCreateValueStore($values['sections'], storage_path('content/pages/'), $key);
+            $this->CreateValueStore( storage_path('content/pages/'), $key, $values['sections'], true);
             unset($values['sections']);
         }
 
