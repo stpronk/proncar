@@ -5,14 +5,12 @@
 </head>
 <body>
     <div id="app">
-        <!-- include navbar -->
-        @include('layouts.navbar', ['items' => $nav, 'editable' => $editable ?? null])
+        <navigation-component :items="{{ json_encode($nav) }}" :editable="'{{ $editable ?? false }}'" :auth="'{{ Auth::check() }}'"></navigation-component>
 
         <!-- include main -->
         @include('layouts.main')
 
-        <!-- include footer -->
-        @include('layouts.footer')
+        <footer-component></footer-component>
     </div>
 </body>
 </html>

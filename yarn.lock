@@ -5504,9 +5504,19 @@ vm-browserify@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
 
+vue-axios@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.npmjs.pos4logistics.nl/vue-axios/-/vue-axios-2.1.4.tgz#a9d298f7e876f9a87feb336b37adcbce34ff9f9f"
+  integrity sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
+
+vue-laroute@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.pos4logistics.nl/vue-laroute/-/vue-laroute-0.2.0.tgz#8a29325b6f41edbeb829033f7e0ea317f162eef6"
+  integrity sha512-+RtbufPGCEvdbQzf2iZgS+7QSDcU/5oOVZLPa89YQQosobe2u3N4KTQqcUaTcI19w/flqvKcfu9rmoOae7qY2g==
 
 vue-loader@^15.4.2:
   version "15.7.0"

@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-xl-9 mx-auto">
                     {{--                <h3></h3>--}}
-                    <img class="mb-6 " width="100%" height="auto" alt="{{ $content['alt'] ?? '' }}" src="{{ $content['src'] ?? '' }}">
+                    <img class="mb-6 " width="100%" height="auto" alt="{{ $content['logo']['alt'] ?? '' }}" src="{{ $content['logo']['src'] ?? '' }}">
                 </div>
             </div>
         </div>

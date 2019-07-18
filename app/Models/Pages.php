@@ -2,19 +2,22 @@
 
 namespace App\Models;
 
+use App\Traits\ValueStorageTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Pages extends Model
 {
+    use ValueStorageTrait;
+
     protected $table = 'pages';
 
     protected $fillable = [];
 
-    function Sections(){
+    public function Sections(){
         return $this->hasMany(Sections::class, 'page_id', 'id');
     }
 
-    function Template(){
+    public function Template(){
         return $this->belongsTo(Templates::class, 'template_id', 'id');
     }
 }

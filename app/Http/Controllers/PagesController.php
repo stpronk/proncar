@@ -36,14 +36,20 @@ class PagesController extends BaseController
         return 'W.I.P.';
     }
 
-    public function edit()
+    public function edit(PageRequest $pageRequest)
     {
+        $page = $pageRequest->getPageAttributes();
 
+        return $this->view('pages.editor.edit', [
+            'page' => $page
+        ]);
     }
 
     public function show(PageRequest $pageRequest)
     {
         $page = $pageRequest->getPageAttributes();
+
+//        dd($page);
 
         return $this->view($page['template']['blade'], [
             'sections' => $page['sections'],
@@ -53,8 +59,7 @@ class PagesController extends BaseController
 
     public function generatePages()
     {
-
-        $this->UpdateOrCreateValueStore([
+            $page_index = [
             'pages' => [
                 'welcome'     => [
                     'name'     => 'Welcome',
@@ -73,14 +78,16 @@ class PagesController extends BaseController
                         'id'    => 1,
                         'blade' => 'default',
                     ],
+
                     'sections' => [
                         0 => [
                             'blade' => 'header',
                             'content' => [
-                                'logo'    => true,
                                 'overlay' => true,
-                                'alt'     => 'proncar_header',
-                                'src'     => '/images/Logo_web_transparant.png'
+                                'logo' => [
+                                    'alt'     => 'proncar_header',
+                                    'src'     => '/images/Logo_web_transparant.png'
+                                ],
                             ]
                         ],
                         1 => [
@@ -314,7 +321,14 @@ class PagesController extends BaseController
                     'uuid'     => Str::uuid(),
                 ],
             ],
-        ], storage_path('content/'), 'pages_index');
+        ];
+
+        foreach ($page_index['pages'] as $key => &$values) {
+            $this->UpdateOrCreateValueStore($values['sections'], storage_path('content/pages/'), $key);
+            unset($values['sections']);
+        }
+
+        $this->UpdateOrCreateValueStore($page_index, storage_path('content/'), 'pages_index');
 
         dd($this->pages->toArray());
     }

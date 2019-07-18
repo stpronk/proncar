@@ -4,26 +4,31 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Route;
+use Spatie\Valuestore\Valuestore;
 
 class PageRequest extends FormRequest
 {
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        return [
-            //
-        ];
+    public $index;
+
+    public $page = [];
+
+    public function rules(){
+        return [];
     }
 
-    public function getPageAttributes(){
-        $key = Route::currentRouteName();
-        $page = page_index()[$key];
-        $page['index'] = $key;
+    public function __construct(){
+        Parent::__construct();
 
-        return $page;
+        $this->index = Route::currentRouteName();
+
+        $this->page = page_index($this->index);
+        $this->page['sections'] = page_sections($this->index);
+    }
+
+
+    public function getPageAttributes(){
+        $this->page['index'] = $this->index;
+
+        return $this->page;
     }
 }
