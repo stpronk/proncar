@@ -37391,7 +37391,7 @@ var staticRenderFns = [
             "a",
             {
               staticClass: "text-white",
-              attrs: { href: "https://stpronk.nl/" }
+              attrs: { target: "_target", href: "https://stpronk.nl/" }
             },
             [_vm._v("StPronk")]
           )
@@ -50499,8 +50499,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/stevepronk/code/Proncar/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/stevepronk/code/Proncar/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/new_proncar/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/new_proncar/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

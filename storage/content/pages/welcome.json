@@ -63,15 +63,19 @@
       },
       "items": [
         {
+          "icon": "social-instagram",
+          "href": "https:\/\/www.instagram.com\/proncar_zoetermeer\/"
+        },
+        {
           "icon": "social-facebook",
           "href": "https:\/\/www.facebook.com\/Proncar-468839900135515\/"
         },
-        {
-          "icon": "social-instagram",
-          "href": "https:\/\/www.instagram.com\/proncar_zoetermeer\/"
-        }
+	{
+	  "icon": "social-youtube",
+	  "href": "https:\/\/www.youtube.com\/channel\/UC6BuEIGDK1nvfBsiPSJ3mrg"
+	}
       ],
-      "item_count": 2
+      "item_count": 3
     }
   }
 ]
