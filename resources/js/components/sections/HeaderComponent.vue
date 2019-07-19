@@ -6,7 +6,7 @@
         <div v-if="this.content.logo" class="container">
             <div class="row">
                 <div class="col-xl-9 mx-auto">
-                    <img class="mb-6 " width="auto" height="auto" :alt="this.content.logo.alt" :src="this.content.logo.src">
+                    <img class="mb-6 " width="auto" height="auto" :alt="this.content.alt" :src="this.content.src">
                 </div>
             </div>
         </div>

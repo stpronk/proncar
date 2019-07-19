@@ -27,10 +27,18 @@ axios.defaults.headers.common = {
     'X-CSRF-TOKEN': document.querySelector('meta[name="_token"]').getAttribute('content')
 };
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('navigation-component', require('./components/NavigationComponent.vue').default);
-Vue.component('footer-component', require('./components/FooterComponent.vue').default);
-Vue.component('header-component', require('./components/HeaderComponent.vue').default);
+// Page components
+Vue.component('default-component', require('./components/pages/DefaultComponent.vue').default);
+
+// Section components
+Vue.component('navigation-component', require('./components/sections/NavigationComponent.vue').default);
+Vue.component('footer-component', require('./components/sections/FooterComponent.vue').default);
+Vue.component('header-component', require('./components/sections/HeaderComponent.vue').default);
+Vue.component('feature-icons-component', require('./components/sections/FeatureIconsComponent.vue').default);
+Vue.component('showcase-component', require('./components/sections/ShowcaseComponent.vue').default);
+Vue.component('social-media-component', require('./components/sections/SocialMediaComponent.vue').default);
+Vue.component('contact-component', require('./components/sections/ContactComponent.vue').default);
+Vue.component('text-component', require('./components/sections/TextComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -1878,7 +1878,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     components: function components() {
-      console.log(this.items);
       var i = 0;
       return this.items.map(function (item) {
         i++;
@@ -1908,7 +1907,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    content: {
+      type: Array,
+      required: true
+    }
+  }
+});
 
 /***/ }),
 
@@ -1926,7 +1932,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    content: {
+      type: Object,
+      required: true
+    }
+  }
+});
 
 /***/ }),
 
@@ -2118,7 +2143,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    content: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    iteration: function iteration() {
+      return this.content.side = !this.content.side;
+    }
+  }
+});
 
 /***/ }),
 
@@ -2136,7 +2202,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    content: {
+      type: Object,
+      required: true
+    }
+  }
+});
 
 /***/ }),
 
@@ -37535,7 +37636,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section")
+  return _c("section", { staticClass: "features-icons bg-light text-center" }, [
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.content.items, function(item) {
+          return _c("div", { class: "col-md-" + 12 / _vm.content.item_count }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "features-icons-item mx-auto mb-5 mb-md-0 mb-md-3 text-center"
+              },
+              [
+                _c("div", { staticClass: "features-icons-icon d-flex" }, [
+                  _c("i", {
+                    staticClass: "m-auto text-primary",
+                    class: "icon-" + item.icon
+                  })
+                ]),
+                _vm._v(" "),
+                _c("h3", { domProps: { textContent: _vm._s(item.head) } }),
+                _vm._v(" "),
+                _c("p", {
+                  staticClass: "lead mb-0",
+                  domProps: { textContent: _vm._s(item.body) }
+                })
+              ]
+            )
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37654,8 +37789,8 @@ var render = function() {
                   attrs: {
                     width: "auto",
                     height: "auto",
-                    alt: this.content.logo.alt,
-                    src: this.content.logo.src
+                    alt: this.content.alt,
+                    src: this.content.src
                   }
                 })
               ])
@@ -37849,7 +37984,81 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section")
+  return _c(
+    "section",
+    { staticClass: "showcase" },
+    _vm._l(_vm.content.items, function(item) {
+      return _c("div", { staticClass: "container-fluid p-0" }, [
+        _vm.iteration() === true
+          ? _c("div", { staticClass: "row no-gutters" }, [
+              _c("div", {
+                staticClass:
+                  "col-lg-6 text-white showcase-img background-cover",
+                style:
+                  "background: url(" + item.image + ") no-repeat center center;"
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-6 my-auto showcase-text" }, [
+                _c("h2", { domProps: { textContent: _vm._s(item.head) } }),
+                _vm._v(" "),
+                _c("p", {
+                  staticClass: "lead mb-0",
+                  domProps: { textContent: _vm._s(item.body) }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-4 mr-auto" }, [
+                  _c(
+                    "a",
+                    { attrs: { href: _vm.$routes.route(item.route_key) } },
+                    [
+                      _c("button", {
+                        staticClass: "btn btn-lg btn-primary font-weight-bold",
+                        domProps: { textContent: _vm._s(item.route_name) }
+                      })
+                    ]
+                  )
+                ])
+              ])
+            ])
+          : _c("div", { staticClass: "row no-gutters" }, [
+              _c("div", {
+                staticClass:
+                  "col-lg-6 order-lg-2 text-white showcase-img background-cover",
+                style:
+                  "background: url(" + item.image + ") no-repeat center center;"
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-lg-6 order-lg-1 my-auto showcase-text" },
+                [
+                  _c("h2", { domProps: { textContent: _vm._s(item.head) } }),
+                  _vm._v(" "),
+                  _c("p", {
+                    staticClass: "lead mb-0",
+                    domProps: { textContent: _vm._s(item.body) }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "mt-4 mr-auto" }, [
+                    _c(
+                      "a",
+                      { attrs: { href: _vm.$routes.route(item.route_key) } },
+                      [
+                        _c("button", {
+                          staticClass:
+                            "btn btn-lg btn-primary font-weight-bold",
+                          domProps: { textContent: _vm._s(item.route_name) }
+                        })
+                      ]
+                    )
+                  ])
+                ]
+              )
+            ])
+      ])
+    }),
+    0
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37873,7 +38082,92 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section")
+  return _c("section", { staticClass: "features-icons bg-light text-center" }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-xl-9 mx-auto" }, [
+          _c("h2", {
+            staticClass: "mb-5",
+            domProps: { textContent: _vm._s(_vm.content.head) }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-xl-9 mx-auto" }, [
+            _c(
+              "div",
+              { staticClass: "row" },
+              _vm._l(_vm.content.items, function(item) {
+                return _c(
+                  "div",
+                  { class: "col-" + 12 / _vm.content.item_count },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "text-decoration-none features-icons-icon d-flex",
+                            attrs: { href: item.href, target: "_blank" }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "m-auto text-primary",
+                              class: "icon-" + item.icon
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ]
+                )
+              }),
+              0
+            ),
+            _vm._v(" "),
+            _vm.content.contact
+              ? _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-11 mx-auto mt-5" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3"
+                      },
+                      [
+                        _c(
+                          "a",
+                          {
+                            staticClass:
+                              "text-decoration-none d-flex text-center",
+                            attrs: {
+                              href: _vm.$routes.route(_vm.content.contact.route)
+                            }
+                          },
+                          [
+                            _c("button", {
+                              staticClass:
+                                "btn btn-lg btn-outline-primary w-100",
+                              domProps: {
+                                textContent: _vm._s(_vm.content.contact.head)
+                              }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
+              : _vm._e()
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51207,8 +51501,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/new_proncar/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/new_proncar/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Steve\websites\Proncar\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Steve\websites\Proncar\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

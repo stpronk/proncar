@@ -8,7 +8,7 @@
         <navigation-component :items="{{ json_encode($nav) }}" :editable="'{{ $editable ?? false }}'" :auth="'{{ Auth::check() }}'"></navigation-component>
 
         <!-- include main -->
-        @include('layouts.main')
+        @yield('content')
 
         <footer-component></footer-component>
     </div>

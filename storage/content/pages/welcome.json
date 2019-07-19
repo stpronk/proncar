@@ -34,6 +34,7 @@
   {
     "blade": "showcase",
     "content": {
+      "side": true,
       "items": [
         {
           "image": "images\/bg-showcase-1.jpg",
