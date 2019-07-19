@@ -7,7 +7,7 @@
 {{--    <main>--}}
 {{--    @foreach($sections as $key => $section)--}}
 
-{{--        <header-component :content="{{ json_encode($section['content']) }}"></header-component>--}}
+        {{--        <header-component :content="{{ json_encode($section['content']) }}"></header-component>--}}
 
 {{--        @include('sections.'.$section['blade'], ['content' => $section['content']])--}}
 

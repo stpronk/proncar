@@ -1,1 +1,26 @@
-[{"blade":"contact","content":{"action":"dashboard.contact","method":"POST"}},{"blade":"social-media","content":{"head":"You can also find me on social media!","items":[{"icon":"social-facebook","href":"https:\/\/www.facebook.com\/Proncar-468839900135515\/"},{"icon":"social-instagram","href":"https:\/\/www.instagram.com\/proncar_zoetermeer\/"}],"item_count":2}},{"blade":"contact","content":{"action":"dashboard.contact","method":"POST"}},{"blade":"social-media","content":{"head":"You can also find me on social media!","items":[{"icon":"social-facebook","href":"https:\/\/www.facebook.com\/Proncar-468839900135515\/"},{"icon":"social-instagram","href":"https:\/\/www.instagram.com\/proncar_zoetermeer\/"}],"item_count":2}},{"blade":"contact","content":{"action":"dashboard.contact","method":"POST"}},{"blade":"social-media","content":{"head":"You can also find me on social media!","items":[{"icon":"social-facebook","href":"https:\/\/www.facebook.com\/Proncar-468839900135515\/"},{"icon":"social-instagram","href":"https:\/\/www.instagram.com\/proncar_zoetermeer\/"}],"item_count":2}},{"blade":"contact","content":{"action":"dashboard.contact","method":"POST"}},{"blade":"social-media","content":{"head":"You can also find me on social media!","items":[{"icon":"social-facebook","href":"https:\/\/www.facebook.com\/Proncar-468839900135515\/"},{"icon":"social-instagram","href":"https:\/\/www.instagram.com\/proncar_zoetermeer\/"}],"item_count":2}},{"blade":"contact","content":{"action":"dashboard.contact","method":"POST"}},{"blade":"social-media","content":{"head":"You can also find me on social media!","items":[{"icon":"social-facebook","href":"https:\/\/www.facebook.com\/Proncar-468839900135515\/"},{"icon":"social-instagram","href":"https:\/\/www.instagram.com\/proncar_zoetermeer\/"}],"item_count":2}}]
+[
+  {
+    "blade": "contact",
+    "content": {
+      "action": "dashboard.contact",
+      "method": "POST"
+    }
+  },
+  {
+    "blade": "social-media",
+    "content": {
+      "head": "You can also find me on social media!",
+      "items": [
+        {
+          "icon": "social-facebook",
+          "href": "https:\/\/www.facebook.com\/Proncar-468839900135515\/"
+        },
+        {
+          "icon": "social-instagram",
+          "href": "https:\/\/www.instagram.com\/proncar_zoetermeer\/"
+        }
+      ],
+      "item_count": 2
+    }
+  }
+]
