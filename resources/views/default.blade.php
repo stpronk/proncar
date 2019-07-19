@@ -2,12 +2,16 @@
 
 @section('content')
 
-    @foreach($sections as $key => $section)
+    <default-component :items="{{ json_encode($sections) }}"></default-component>
+
+{{--    <main>--}}
+{{--    @foreach($sections as $key => $section)--}}
 
 {{--        <header-component :content="{{ json_encode($section['content']) }}"></header-component>--}}
 
-        @include('sections.'.$section['blade'], ['content' => $section['content']])
+{{--        @include('sections.'.$section['blade'], ['content' => $section['content']])--}}
 
-    @endforeach
+{{--    @endforeach--}}
+{{--    </main>--}}
 
 @endsection
