@@ -37787,7 +37787,7 @@ var render = function() {
                 _c("img", {
                   staticClass: "mb-6 ",
                   attrs: {
-                    width: "auto",
+                    width: "100%",
                     height: "auto",
                     alt: this.content.alt,
                     src: this.content.src
@@ -51501,8 +51501,8 @@ var __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { if (typeof Symbol === 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Steve\websites\Proncar\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Steve\websites\Proncar\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/stpronk/code/proncar/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/stpronk/code/proncar/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
