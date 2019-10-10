@@ -5,6 +5,29 @@ import VueAxios from 'vue-axios'
 import VueLaroute from 'vue-laroute';
 import routes from './laroute';
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+    faUnlink,
+    faLink,
+    faBold,
+    faItalic,
+    faUnderline,
+    faStrikethrough,
+    faSpinner,
+} from '@fortawesome/free-solid-svg-icons'
+
+// Add all icons needed for the editables
+library.add(
+    faUnlink,
+    faLink,
+    faBold,
+    faItalic,
+    faUnderline,
+    faStrikethrough,
+    faSpinner
+);
+
 Vue.use(VueLaroute, {
     routes,
     accessor: '$routes', // Optional: the global variable for accessing the router
@@ -39,6 +62,10 @@ Vue.component('showcase-component', require('./components/sections/ShowcaseCompo
 Vue.component('social-media-component', require('./components/sections/SocialMediaComponent.vue').default);
 Vue.component('contact-component', require('./components/sections/ContactComponent.vue').default);
 Vue.component('text-component', require('./components/sections/TextComponent.vue').default);
+
+// Editable components
+Vue.component('text-edit-component', require('./components/editables/TextEditComponent.vue').default);
+Vue.component('icon', FontAwesomeIcon);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -13,8 +13,11 @@ class CreateContentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contents', function (Blueprint $table) {
+        Schema::create('content', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('selector');
+            $table->uuid('uuid');
+            $table->text('content')->nullable();
             $table->timestamps();
         });
     }

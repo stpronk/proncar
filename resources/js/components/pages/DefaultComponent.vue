@@ -1,13 +1,18 @@
 <template>
     <main>
-        <component v-for="component in components" v-bind:key="component.id" v-bind:is="component.name" :content="component.content"></component>
+        <component v-for="component in components"
+                   v-bind:key="component.id"
+                   v-bind:is="component.name"
+                   :content="component.content"
+                   :auth="auth"></component>
     </main>
 </template>
 
 <script>
     export default {
         props: {
-            items: {type: Array, required: true}
+            items: {type: Array, required: true},
+            auth: {}
         },
         data() {
             return {}

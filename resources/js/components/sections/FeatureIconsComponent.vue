@@ -7,7 +7,13 @@
                         <div class="features-icons-icon d-flex">
                             <i class="m-auto text-primary" :class="'icon-'+ item.icon"></i>
                         </div>
-                        <h3 v-text="item.head"></h3>
+                        <h3 v-if="auth">
+                            <text-edit-component selector="some" :body="item.head" :options="{
+                                link: true,
+                                bold: true
+                            }"></text-edit-component>
+                        </h3>
+                        <h3 v-else v-text="item.head"></h3>
                         <p v-text="item.body" class="lead mb-0"></p>
                     </div>
                 </div>
@@ -18,7 +24,8 @@
 <script>
     export default {
         props: {
-            content: {type: Object, required: true}
+            content: {type: Object, required: true},
+            auth: {}
         }
     }
 </script>
