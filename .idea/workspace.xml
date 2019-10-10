@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="732dc2a7-5c35-4f1e-8810-b0c164a2d081" name="Default Changelist" comment="Removed head to include the generick one">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Proncar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proncar.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/default.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/default.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sections/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sections/header.blade.php" afterDir="false" />
+    <list default="true" id="732dc2a7-5c35-4f1e-8810-b0c164a2d081" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Proncar.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -171,11 +168,11 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Steve\websites\Proncar\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Steve\websites\Proncar\resources\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Steve\websites\Proncar\app\Models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -226,7 +223,7 @@
       <workItem from="1562848756705" duration="326000" />
       <workItem from="1563184248646" duration="25716000" />
       <workItem from="1563346136048" duration="17267000" />
-      <workItem from="1570737933862" duration="420000" />
+      <workItem from="1570737933862" duration="823000" />
     </task>
     <task id="LOCAL-00001" summary="Initial laravel install">
       <created>1561553808541</created>
@@ -410,7 +407,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563291022950</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="updated gitignore">
+      <created>1570738569322</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1570738569322</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Updated project">
+      <created>1570738648696</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1570738648696</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,9 +439,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added the setup" />
-    <MESSAGE value="Added new design" />
-    <MESSAGE value="added margin on login container" />
     <MESSAGE value="Mobile navbar items now align in middle" />
     <MESSAGE value="Removed middle alignment cuz it doesn't look better" />
     <MESSAGE value="Added header to seperate file" />
@@ -453,6 +461,9 @@
     <MESSAGE value="Added all stuff needed for the page editor with relations attached" />
     <MESSAGE value="Added pages page" />
     <MESSAGE value="Added include head" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added include head" />
+    <MESSAGE value="Updated" />
+    <MESSAGE value="updated gitignore" />
+    <MESSAGE value="Updated project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated project" />
   </component>
 </project>
