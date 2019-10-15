@@ -9,6 +9,9 @@ cache:
     - vendor/
     - node_modules/
     
+before_script:
+    - bash ci/docker_install.sh > /dev/null
+    
 install_dependencies:
   stage: build
   script:
