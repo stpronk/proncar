@@ -1,4 +1,4 @@
-image: docker:latest
+image: php:latest
 
 stages:
   - build
@@ -24,10 +24,10 @@ install_dependencies:
     - docker-php-ext-enable xdebug
     - curl -sS https://getcomposer.org/installer | php
     - php composer.phar install
-    - npm install
+#    - npm install
   artifacts:
     paths:
-      - node_modules/
+#      - node_modules/
       - vendor/
 
 test_application:
