@@ -13,14 +13,9 @@ apt-get install git -yqq \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
-    sqlite3 libsqlite3-dev \
     libssl-dev \
     libzip-dev \
-    && pecl install mongodb \
     && pecl install redis \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) iconv gd pdo zip opcache pdo_sqlite \
-    && a2enmod rewrite expires
 
 # Install phpunit, the tool that we will use for testing
 curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar
