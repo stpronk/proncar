@@ -13,7 +13,7 @@ cache:
 before_script:
     - bash ci/docker_install.sh > /dev/null
     
-Build:
+Building:
   stage: Build
   only:
     refs:
@@ -35,7 +35,7 @@ Build:
 #      - node_modules/
       - vendor/
 
-Test:
+Testing:
   stage: Test
   only:
     refs:
@@ -44,7 +44,7 @@ Test:
   script:
     - php vendor/bin/phpunit --coverage-text --colors=never
     
-Quality:
+Code quality:
   stage: Test
   only:
     refs:
@@ -61,7 +61,7 @@ Deploy develop:
   script:
     - php vendor/bin/phpunit --coverage-text --colors=never
 
-Deploy_production:
+Deploy production:
   stage: Deploy
   only:
     refs:
