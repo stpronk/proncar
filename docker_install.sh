@@ -17,7 +17,18 @@ apt-get install git -yqq \
     libzip-dev \
     && pecl install redis \
 
-node -v && npm -v
+curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+  apt-get update && \
+  apt-get install -y --no-install-recommends nodejs && \
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends yarn && \
+    npm install -g npm
+
+node -v &&
+npm -v &&
+yarn -v
 
 # Install phpunit, the tool that we will use for testing
 curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar
