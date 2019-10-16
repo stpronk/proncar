@@ -12,8 +12,11 @@ cache:
 before_script:
     - bash ci/docker_install.sh > /dev/null
     
-install_dependencies:
+build:
   stage: build
+  only:
+    - master@stpronk/proncar
+    - develop@stpronk/proncar
   script:
     - apt-get update -yqq
     - apt-get install gnupg -yqq
@@ -30,8 +33,19 @@ install_dependencies:
 #      - node_modules/
       - vendor/
 
-test_application:
+test:
   stage: test
+  only:
+    - master@stpronk/proncar
+    - develop@stpronk/proncar
   script:
      - php vendor/bin/phpunit --coverage-text --colors=never
     # - npm test
+    
+quality:
+  stage: test
+  only:
+    - master@stpronk/proncar
+    - develop@stpronk/proncar
+  script:
+    - php vendor/bin/phpunit --coverage-text --colors=never
