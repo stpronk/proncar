@@ -51,7 +51,7 @@ Test_Front-end:
       - master
       - develop
   script:
-    # - npm test
+    - php vendor/bin/phpunit --coverage-text --colors=never
     
 Code_quality:
   stage: Test
@@ -60,7 +60,7 @@ Code_quality:
       - master
       - develop
   script:
-    # - php vendor/bin/phpunit --coverage-text --colors=never
+    - php vendor/bin/phpunit --coverage-text --colors=never
 
 Deploy_development:
   stage: Deploy
@@ -68,7 +68,7 @@ Deploy_development:
     refs:
       - develop
   script:
-    # - deploy
+    - php vendor/bin/phpunit --coverage-text --colors=never
 
 Deploy_production:
   stage: Deploy
@@ -76,6 +76,6 @@ Deploy_production:
     refs:
       -  master
   script:
-    # - deploy
+    - php vendor/bin/phpunit --coverage-text --colors=never
 
 
