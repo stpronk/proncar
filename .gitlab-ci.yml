@@ -1,8 +1,9 @@
 image: php:latest
 
 stages:
-  - build
-  - test
+  - Build
+  - Test
+  - Deploy
 
 cache:
   paths:
@@ -12,8 +13,8 @@ cache:
 before_script:
     - bash ci/docker_install.sh > /dev/null
     
-build:
-  stage: build
+Build:
+  stage: Build
   only:
     refs:
       - master
@@ -34,21 +35,47 @@ build:
 #      - node_modules/
       - vendor/
 
-test:
-  stage: test
+Test Back-end:
+  stage: Test
   only:
     refs:
       - master
       - develop
   script:
      - php vendor/bin/phpunit --coverage-text --colors=never
-    # - npm test
     
-quality:
-  stage: test
+Test Front-end:
+  stage: Test
   only:
     refs:
       - master
       - develop
   script:
-    - php vendor/bin/phpunit --coverage-text --colors=never
+    # - npm test
+    
+Code quality:
+  stage: Test
+  only:
+    refs:
+      - master
+      - develop
+  script:
+    # - php vendor/bin/phpunit --coverage-text --colors=never
+
+Deploy development:
+  stage: Deploy
+    only:
+      refs:
+        - develop
+    script:
+      # - deploy
+
+Deploy production:
+  stage: Deploy
+    only:
+      refs:
+        -  master
+    script:
+      # - deploy
+
+
