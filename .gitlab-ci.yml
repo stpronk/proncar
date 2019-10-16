@@ -53,7 +53,7 @@ Quality:
   script:
     - php vendor/bin/phpunit --coverage-text --colors=never
 
-Deploy_develop:
+Deploy develop:
   stage: Deploy
   only:
     refs:
