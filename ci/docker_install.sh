@@ -17,8 +17,8 @@ apt-get install git -yqq \
     libzip-dev \
     && pecl install redis \
     
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_12.x
+apt-get install -y nodejs
 
 node -v && npm -v
 
