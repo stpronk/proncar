@@ -64,18 +64,18 @@ Code_quality:
 
 Deploy_development:
   stage: Deploy
-    only:
-      refs:
-        - develop
-    script:
-      # - deploy
+  only:
+    refs:
+      - develop
+  script:
+    # - deploy
 
 Deploy_production:
   stage: Deploy
-    only:
-      refs:
-        -  master
-    script:
-      # - deploy
+  only:
+    refs:
+      -  master
+  script:
+    # - deploy
 
 
