@@ -15,8 +15,9 @@ before_script:
 build:
   stage: build
   only:
-    - master@stpronk/proncar
-    - develop@stpronk/proncar
+    refs:
+      - master
+      - develop
   script:
     - apt-get update -yqq
     - apt-get install gnupg -yqq
@@ -36,8 +37,9 @@ build:
 test:
   stage: test
   only:
-    - master@stpronk/proncar
-    - develop@stpronk/proncar
+    refs:
+      - master
+      - develop
   script:
      - php vendor/bin/phpunit --coverage-text --colors=never
     # - npm test
@@ -45,7 +47,8 @@ test:
 quality:
   stage: test
   only:
-    - master@stpronk/proncar
-    - develop@stpronk/proncar
+    refs:
+      - master
+      - develop
   script:
     - php vendor/bin/phpunit --coverage-text --colors=never
