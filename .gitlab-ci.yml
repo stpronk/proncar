@@ -35,7 +35,7 @@ Build:
 #      - node_modules/
       - vendor/
 
-Test Back-end:
+Test_Back-end:
   stage: Test
   only:
     refs:
@@ -44,7 +44,7 @@ Test Back-end:
   script:
      - php vendor/bin/phpunit --coverage-text --colors=never
     
-Test Front-end:
+Test_Front-end:
   stage: Test
   only:
     refs:
@@ -53,7 +53,7 @@ Test Front-end:
   script:
     # - npm test
     
-Code quality:
+Code_quality:
   stage: Test
   only:
     refs:
@@ -62,7 +62,7 @@ Code quality:
   script:
     # - php vendor/bin/phpunit --coverage-text --colors=never
 
-Deploy development:
+Deploy_development:
   stage: Deploy
     only:
       refs:
@@ -70,7 +70,7 @@ Deploy development:
     script:
       # - deploy
 
-Deploy production:
+Deploy_production:
   stage: Deploy
     only:
       refs:
