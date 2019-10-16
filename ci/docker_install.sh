@@ -16,6 +16,11 @@ apt-get install git -yqq \
     libssl-dev \
     libzip-dev \
     && pecl install redis \
+    
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+node -v && npm -v
 
 # Install phpunit, the tool that we will use for testing
 curl --location --output /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar
