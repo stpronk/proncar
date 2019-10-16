@@ -1,4 +1,4 @@
-image: php:latest
+image: thecodingmachine/php:7.3-v2-apache-node12
 
 stages:
   - Build
