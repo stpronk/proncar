@@ -51,7 +51,7 @@ Code quality:
       - master
       - develop
   script:
-    - php vendor/bin/phpunit --coverage-text --colors=never
+    - echo "Not used in this project"
 
 Deploy develop:
   stage: Deploy
@@ -59,7 +59,7 @@ Deploy develop:
     refs:
       - develop
   script:
-    - php vendor/bin/phpunit --coverage-text --colors=never
+    - echo "Work in progress"
 
 Deploy production:
   stage: Deploy
@@ -67,6 +67,6 @@ Deploy production:
     refs:
       -  master
   script:
-    - php vendor/bin/phpunit --coverage-text --colors=never
+    - echo "Work in progress"
 
 
