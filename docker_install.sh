@@ -56,7 +56,7 @@ chmod +x /usr/local/bin/phpunit
 
 # Here you can install any other extension that you need
 docker-php-ext-install pdo_mysql
-docker-php-ext-install mbstring pdo_mysql curl json intl gd xml zip bz2 opcache
+docker-php-ext-install intl gd zip bz2 opcache
   pecl install xdebug
 docker-php-ext-enable xdebug
   php composer.phar install
