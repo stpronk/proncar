@@ -58,7 +58,6 @@ Deploy develop:
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
     - ssh gitlabrunner@178.62.209.61
-    - $SERVER_PASS
     - cd /var/www/dev_proncar
     - git checkout --force develop
     - git reset --hard ${CI_COMMIT_SHA:0:8}
