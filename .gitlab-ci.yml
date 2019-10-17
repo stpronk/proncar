@@ -57,15 +57,24 @@ Deploy develop:
   stage: Deploy
   only:
     refs:
+      - master
       - develop
   script:
-    - echo "Work in progress"
+    - ssh ${SERVER_USER}@${SERVER_HOST} -p
+    - ${SERVER_PASS}
+    - cd /var/www/dev_proncar
+    - git checkout --force develop
+    - git reset --hard YOUR_SHA_HERE
+    - composer install
+    - npm run prod
+    - php artisan migrate
 
 Deploy production:
   stage: Deploy
   only:
     refs:
       -  master
+  when: manual
   script:
     - echo "Work in progress"
 
