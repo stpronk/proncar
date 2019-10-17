@@ -60,7 +60,7 @@ Deploy develop:
       - master
       - develop
   script:
-    - ssh ${SERVER_USER}@${SERVER_HOST} -p
+    - ssh ${SERVER_USER}@${SERVER_HOST}
     - ${SERVER_PASS}
     - cd /var/www/dev_proncar
     - git checkout --force develop
