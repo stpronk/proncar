@@ -51,6 +51,12 @@ Deploy develop:
       - master
       - develop
   script:
+    - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
     - ssh gitlabrunner@178.62.209.61
     - $SERVER_PASS
     - cd /var/www/dev_proncar
