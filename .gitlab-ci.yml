@@ -46,21 +46,16 @@ Code quality:
 
 Deploy develop:
   stage: Deploy
-  variables:
-    SERVER_HOST: ${SERVER_HOST}
-    SERVER_USER: ${SERVER_USER}
-    SERVER_PASS: ${SERVER_PASS}
-    SHA: ${CI_COMMIT_SHA:0:8}
   only:
     refs:
       - master
       - develop
   script:
-    - ssh $SERVER_USER@$SERVER_HOST
+    - ssh gitlabrunner@178.62.209.61
     - $SERVER_PASS
     - cd /var/www/dev_proncar
     - git checkout --force develop
-    - git reset --hard $SHA
+    - git reset --hard ${CI_COMMIT_SHA:0:8}
     - composer install
     - npm run prod
     - php artisan migrate
