@@ -49,8 +49,6 @@ class PagesController extends BaseController
     {
         $page = $pageRequest->getPageAttributes();
 
-//        dd($page);
-
         return $this->view($page['template']['blade'], [
             'sections' => $page['sections'],
             'editable' => $page['index'],
