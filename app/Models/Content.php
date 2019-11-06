@@ -8,7 +8,11 @@ class Content extends Model
 {
     protected $table = 'content';
 
-    protected $fillable = [];
+    protected $fillable = [
+        'selector',
+        'uuid',
+        'content'
+    ];
 
     public function Sections(){
         return $this->belongsTo(Content::class, 'section_id', 'id');
