@@ -17,4 +17,12 @@ class Sections extends Model
     public function Content(){
         return $this->hasOne(Content::class, 'section_id', 'id');
     }
+
+    public function formatForDatabase($pageId, $data)
+    {
+        $this->blade = $data['blade'];
+        $this->page_id = $pageId;
+
+        return $this;
+    }
 }

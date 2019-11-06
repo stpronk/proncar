@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\PageRequest;
+use App\Models\Content;
 use App\Models\Pages;
+use App\Models\Sections;
 use App\Traits\ValueStorageTrait;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -326,6 +328,7 @@ class PagesController extends BaseController
 
         foreach ($page_index['pages'] as $key => &$values) {
             $this->CreateValueStore( storage_path('content/pages/'), $key, $values['sections'], true);
+            $sections[$key] = $values['sections'];
             unset($values['sections']);
         }
 
@@ -333,10 +336,26 @@ class PagesController extends BaseController
 
         Pages::truncate();
 
-        foreach ($page_index['pages'] as $selector => $page) {
-            (new Pages())
-                ->formatForDatabase($selector, $page)
-                ->save();
+        foreach ($page_index['pages'] as $selector => $data) {
+            $page = (new Pages())
+                ->formatForDatabase($selector, $data);
+
+            // Save seperate so I can call the ID later on
+            $page->save();
+
+            foreach ($sections[$selector] as $data) {
+                $section = (new Sections())
+                    ->formatForDatabase($page->id, $data);
+
+                $section->save();
+
+                $content = (new Content())
+                    ->formatForDatabase($section->id, $data['content']);
+
+                $content->persist();
+            }
+
+
         }
 
         dd(

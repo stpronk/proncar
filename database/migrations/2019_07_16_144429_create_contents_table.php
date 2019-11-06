@@ -15,9 +15,11 @@ class CreateContentsTable extends Migration
     {
         Schema::create('content', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('selector');
             $table->uuid('uuid');
-            $table->text('content')->nullable();
+            $table->integer('section_id');
+            $table->json('content')->nullable();
+            $table->json('items')->nullable();
+
             $table->timestamps();
         });
     }

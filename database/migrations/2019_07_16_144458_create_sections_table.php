@@ -15,6 +15,8 @@ class CreateSectionsTable extends Migration
     {
         Schema::create('sections', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('blade');
+            $table->integer('page_id');
             $table->timestamps();
         });
     }
