@@ -11,7 +11,22 @@ class Pages extends Model
 
     protected $table = 'pages';
 
-    protected $fillable = [];
+    protected $fillable = [
+        'selector',
+        'name',
+        'title',
+        'route_url',
+        'route_auth',
+        'route_controller',
+        'nav_hidden',
+        'nav_name',
+        'nav_class',
+        'template_id',
+        'template_blade',
+        'type',
+        'uuid',
+        'hidden'
+    ];
 
     public function Sections(){
         return $this->hasMany(Sections::class, 'page_id', 'id');
