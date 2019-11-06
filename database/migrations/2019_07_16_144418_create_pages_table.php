@@ -24,7 +24,7 @@ class CreatePagesTable extends Migration
             $table->string('route_controller');
             $table->boolean('nav_hidden')->default(true);
             $table->string('nav_name');
-            $table->string('nav_class');
+            $table->string('nav_class')->nullable();
             $table->integer('template_id')->default(1);
             $table->string('template_blade')->default('default');
             $table->string('type')->default('get');
