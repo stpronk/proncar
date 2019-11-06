@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\PageRequest;
+use App\Models\Pages;
 use App\Traits\ValueStorageTrait;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -61,7 +62,7 @@ class PagesController extends BaseController
             'pages' => [
                 'welcome'     => [
                     'name'     => 'Welcome',
-                    'Title'    => 'Performance',
+                    'title'    => 'Performance',
                     'route'    => [
                         'url'        => '/',
                         'auth'       => false,
@@ -225,6 +226,7 @@ class PagesController extends BaseController
                     'sections' => [],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
+                    'hidden'   => false
                 ],
 
                 'contact'     => [
@@ -272,6 +274,7 @@ class PagesController extends BaseController
                     ],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
+                    'hidden'   => false
                 ],
                 'voorwaarden' => [
                     'name'     => 'Voorwaarden',
@@ -316,6 +319,7 @@ class PagesController extends BaseController
                         ]],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
+                    'hidden'   => false
                 ],
             ],
         ];
@@ -327,6 +331,17 @@ class PagesController extends BaseController
 
         $this->UpdateOrCreateValueStore($page_index, storage_path('content/'), 'pages_index');
 
-        dd($this->pages->toArray());
+        Pages::truncate();
+
+        foreach ($page_index['pages'] as $selector => $page) {
+            (new Pages())
+                ->formatForDatabase($selector, $page)
+                ->save();
+        }
+
+        dd(
+            'Database:', Pages::all(),
+            'valueStore:', $this->pages->valueToArray()
+        );
     }
 }

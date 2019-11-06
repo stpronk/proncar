@@ -326,7 +326,7 @@ trait ValueStorageTrait
     }
 
 
-    public function toArray(){
+    public function valueToArray(){
         return $this->valueStore->all();
     }
 
