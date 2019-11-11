@@ -72,7 +72,7 @@ class PagesController extends BaseController
                     ],
                     'nav'      => [
                         'hidden' => true,
-                        'name'   => 'Welcome',
+                        'name'   => 'Home',
                         'class'  => null,
                     ],
                     'template' => [
@@ -96,18 +96,18 @@ class PagesController extends BaseController
                                 'items' => [
                                     0 => [
                                         'icon' => 'wrench',
-                                        'head' => 'Repairs',
-                                        'body' => 'For repair and maintenance you are at the right address.'
+                                        'head' => 'Reperaties',
+                                        'body' => 'Voor reparatie en onderhoud bent u aan het juiste adres.'
                                     ],
                                     1 => [
                                         'icon' => 'energy',
-                                        'head' => 'Performance',
-                                        'body' => 'We will get everything out of your car that it has!',
+                                        'head' => 'Presentatie',
+                                        'body' => 'We halen alles uit uw auto!',
                                     ],
                                     2 => [
                                         'icon' => 'chemistry',
-                                        'head' => 'Style',
-                                        'body' => 'Give your own touch to your car and be unique.',
+                                        'head' => 'Stijl',
+                                        'body' => 'Geef je auto een eigen touch en wees uniek.',
                                     ]
                                 ],
                                 'item_count' => 3,
@@ -119,15 +119,15 @@ class PagesController extends BaseController
                                 'items' => [
                                     0 => [
                                         'image'      => 'images/bg-showcase-1.jpg',
-                                        'head'       => 'With what can we help you?',
-                                        'body'       => 'We do a lot in terms of improving and repairing your car. Do you need something specifik or just want to look what we have in store for you. See it here!',
+                                        'head'       => 'Waarmee kunnen wij u helpen?',
+                                        'body'       => 'We doen veel aan het verbeteren en repareren van uw auto. Heeft u iets speciaals nodig of wilt u gewoon kijken wat we voor u in petto hebben. Bekijk het hier!',
                                         'route_key'  => 'activities',
-                                        'route_name' => 'Activities',
+                                        'route_name' => 'Activiteiten',
                                     ],
                                     1 => [
                                         'image'      => 'images/bg-showcase-2.jpg',
-                                        'head'       => 'We did a lot!',
-                                        'body'       => 'We did all type of cars, want to see what we all did? Or do you want to take a look around?',
+                                        'head'       => 'We hebben veel gedaan!',
+                                        'body'       => 'We hebben alle soorten auto\'s gedaan, willen we zien wat we allemaal hebben gedaan? Of wil je eens rondkijken?',
                                         'route_key'  => 'portfolio',
                                         'route_name' => 'Portfolio',
                                     ],
@@ -138,10 +138,10 @@ class PagesController extends BaseController
                         3 => [
                             'blade' => 'social-media',
                             'content' => [
-                                'head' => 'You can find me on social media!',
+                                'head' => 'Je kunt me vinden op sociale media!',
                                 'contact' => [
                                     'route' => 'contact',
-                                    'head' => 'Contact me!'
+                                    'head' => 'Neem contact op!'
                                 ],
                                 'items' => [
                                     0 => [
@@ -163,8 +163,8 @@ class PagesController extends BaseController
                 ],
 
                 'about'       => [
-                    'name'     => 'About',
-                    'title'    => 'About',
+                    'name'     => 'Over ons',
+                    'title'    => 'Over ons',
                     'route'    => [
                         'url'        => '/about',
                         'auth'       => false,
@@ -172,7 +172,7 @@ class PagesController extends BaseController
                     ],
                     'nav'      => [
                         'hidden' => false,
-                        'name'   => 'About',
+                        'name'   => 'Over ons',
                         'class'  => null,
                     ],
                     'template' => [
@@ -186,8 +186,8 @@ class PagesController extends BaseController
                 ],
 
                 'activities'  => [
-                    'name'     => 'Activities',
-                    'title'     => 'Activities',
+                    'name'     => 'Activiteiten',
+                    'title'     => 'Activiteiten',
                     'route'    => [
                         'url'        => '/activities',
                         'auth'       => false,
@@ -195,7 +195,7 @@ class PagesController extends BaseController
                     ],
                     'nav'      => [
                         'hidden' => false,
-                        'name'   => 'Activities',
+                        'name'   => 'Activiteiten',
                         'class'  => null,
                     ],
                     'template' => [
@@ -259,7 +259,11 @@ class PagesController extends BaseController
                         1 => [
                             'blade' => 'social-media',
                             'content' => [
-                                'head' => 'You can also find me on social media!',
+                                'head' => 'Je kunt me vinden op sociale media!',
+                                'contact' => [
+                                    'route' => 'contact',
+                                    'head' => 'Neem contact op!'
+                                ],
                                 'items' => [
                                     0 => [
                                         'icon' => 'social-facebook',
@@ -328,38 +332,16 @@ class PagesController extends BaseController
 
         foreach ($page_index['pages'] as $key => &$values) {
             $this->CreateValueStore( storage_path('content/pages/'), $key, $values['sections'], true);
+            $this->CreateValueStore( storage_path('concept/pages/'), $key, $values['sections'], true);
             $sections[$key] = $values['sections'];
             unset($values['sections']);
         }
 
         $this->UpdateOrCreateValueStore($page_index, storage_path('content/'), 'pages_index');
+        $this->UpdateOrCreateValueStore($page_index, storage_path('concept/'), 'pages_index');
 
-        Pages::truncate();
-
-        foreach ($page_index['pages'] as $selector => $data) {
-            $page = (new Pages())
-                ->formatForDatabase($selector, $data);
-
-            // Save seperate so I can call the ID later on
-            $page->save();
-
-            foreach ($sections[$selector] as $data) {
-                $section = (new Sections())
-                    ->formatForDatabase($page->id, $data);
-
-                $section->save();
-
-                $content = (new Content())
-                    ->formatForDatabase($section->id, $data['content']);
-
-                $content->persist();
-            }
-
-
-        }
 
         dd(
-            'Database:', Pages::all(),
             'valueStore:', $this->pages->valueToArray()
         );
     }
