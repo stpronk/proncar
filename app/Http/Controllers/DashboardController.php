@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class DashboardController extends BaseController
@@ -26,6 +27,13 @@ class DashboardController extends BaseController
     public function index()
     {
         return $this->view('dashboard');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return response()->json(['message' => 'Success'], 200);
     }
 
     public function contact(Request $request)

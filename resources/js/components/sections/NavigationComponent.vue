@@ -65,9 +65,18 @@
 <script>
     export default {
         props: {
-            items: {type: Object, required: true},
-            editable: {},
-            auth: {}
+            items: {
+              type: Object,
+              required: true
+            },
+            page: {
+              type: String,
+              required: false
+            },
+            auth: {
+              type: Boolean,
+              required: false
+            }
         },
         mounted(){},
         data() {
@@ -76,8 +85,8 @@
             }
         },
         methods: {
-            logout: function($routes) {
-                this.$http.post($routes.route('logout')).then((response) => {
+            logout: ($routes) => {
+                axios.post($routes.route('logout')).then((response) => {
                     window.location.href = $routes.route('welcome')
                 }).catch(error => {
                     window.location.reload()

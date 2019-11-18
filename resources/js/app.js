@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VTooltip from 'v-tooltip'
 
 import VueLaroute from 'vue-laroute';
 import routes from './laroute';
@@ -28,6 +29,7 @@ library.add(
     faSpinner
 );
 
+Vue.use(VTooltip);
 Vue.use(VueLaroute, {
     routes,
     accessor: '$routes', // Optional: the global variable for accessing the router
@@ -46,6 +48,7 @@ Vue.use(VueAxios, axios);
 // headers needed for using ajax calls in VueAxios
 axios.defaults.headers.common = {
     'Content-Type': 'application/json',
+    'Accept':'application/json',
     'X-Requested-With': 'XMLHttpRequest',
     'X-CSRF-TOKEN': document.querySelector('meta[name="_token"]').getAttribute('content')
 };

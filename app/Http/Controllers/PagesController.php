@@ -54,7 +54,7 @@ class PagesController extends BaseController
 
         return $this->view($page['template']['blade'], [
             'sections' => $page['sections'],
-            'editable' => $page['index'],
+            'index'    => $page['index'],
         ]);
     }
 

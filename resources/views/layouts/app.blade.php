@@ -5,7 +5,11 @@
 </head>
 <body>
     <div id="app">
-        <navigation-component :items="{{ json_encode($nav) }}" :editable="'{{ $editable ?? false }}'" :auth="'{{ Auth::check() }}'"></navigation-component>
+        <navigation-component
+                :page="{{ $index ?? 'admin' }}"
+                :items="{{ json_encode($nav) }}"
+                :auth="{{ is_null(Auth::user()) ? 0 : 1 }}"
+        ></navigation-component>
 
         <!-- include main -->
         @yield('content')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\BaseController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends BaseController
 {
@@ -40,5 +41,20 @@ class LoginController extends BaseController
     public function showLoginForm()
     {
         return $this->view('auth.login');
+    }
+
+    public function logout()
+    {
+//        dd(Auth::guard('web')->user());
+        Auth::logout();
+
+        request()->session()->flush();
+        request()->session()->regenerate();
+
+        if(request()->wantsJson()){
+            return response()->json(['message' => 'Success'], 200);
+        }
+
+        return redirect('/');
     }
 }

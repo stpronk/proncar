@@ -12,6 +12,8 @@ class ContentController extends BaseController
 {
     public function store(Request $request)
     {
+        dd($request->all());
+
         $uuid = $request->uuid ?? Str::uuid();
 
         $content = Content::firstOrNew([

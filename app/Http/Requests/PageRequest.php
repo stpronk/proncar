@@ -26,20 +26,9 @@ class PageRequest extends FormRequest
 
 
     public function getPageAttributes(){
-        // Check if their is a use logged in
-        // if this not the case then it will get all content based on the valueStore content
-        // else it will get the database content
-        if(!Auth::check()) {
-            $this->page             = page_index($this->index);
-            $this->page['sections'] = page_sections($this->index);
-        } else {
-
-            $data =
-
-            $data = $data->mapWithKeys(function($value, $key){
-                return [$value->selector => $value];
-            })->valueToArray();
-        }
+        // Setup the basics
+        $this->page             = page_index($this->index);
+        $this->page['sections'] = page_sections($this->index);
 
         // setup the index of the page
         $this->page['index'] = $this->index;
