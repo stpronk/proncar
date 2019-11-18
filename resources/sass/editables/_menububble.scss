@@ -11,6 +11,8 @@
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
 
+  @include reset-font();
+
   &.is-active {
     opacity: 1;
     visibility: visible;

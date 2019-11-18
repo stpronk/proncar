@@ -22,3 +22,9 @@ $cyan: #6cb2eb;
 $color-black: #000000;
 $color-white: #ffffff;
 $color-grey: #dddddd;
+
+@mixin reset-font() {
+  font-weight: initial;
+  font-size: initial;
+  font-family: $font-family-sans-serif;
+}
