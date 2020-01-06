@@ -10,16 +10,20 @@
 
                         <h3 v-if="auth">
                             <text-edit-component :page="item.page" :path="item.path" :uuid="item.uuid" :change="'head'" :body="item.head" :options="{
-                                link: true,
-                                bold: true
+                                bold: true,
+                                italic: true,
+                                strike: true,
+                                underline: true
                             }"></text-edit-component>
                         </h3>
                         <h3 v-else v-html="item.head"></h3>
 
                         <p class="lead mb-0" v-if="auth">
                             <text-edit-component :page="item.page" :path="item.path" :uuid="item.uuid" :change="'body'" :body="item.body" :options="{
-                                link: true,
-                                bold: true
+                                bold: true,
+                                italic: true,
+                                strike: true,
+                                underline: true
                             }"></text-edit-component>
                         </p>
                         <p class="lead mb-0" v-else v-html="item.body"></p>
