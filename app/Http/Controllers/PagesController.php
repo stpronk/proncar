@@ -8,6 +8,8 @@ use App\Models\Content;
 use App\Models\Pages;
 use App\Models\Sections;
 use App\Traits\ValueStorageTrait;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
@@ -52,10 +54,28 @@ class PagesController extends BaseController
     {
         $page = $pageRequest->getPageAttributes();
 
+//        dd($page);
+        if (Auth::check()) {
+            $page = $this->showConcept($page);
+        }
+
         return $this->view($page['template']['blade'], [
             'sections' => $page['sections'],
             'index'    => $page['index'],
         ]);
+    }
+
+    public function showConcept(Array $page)
+    {
+        $content = Content::where('page', $page['index'])->get();
+
+        foreach ($content as $item) {
+            Arr::set($page, 'sections.'.$item->path, $item->data);
+        }
+
+//        dd($page);
+
+        return $page;
     }
 
     public function generatePages()
@@ -81,7 +101,7 @@ class PagesController extends BaseController
                     ],
 
                     'sections' => [
-                        0 => [
+                        Str::uuid()->toString() => [
                             'blade' => 'header',
                             'content' => [
                                 'overlay' => true,
@@ -90,21 +110,21 @@ class PagesController extends BaseController
                                 'src'  => '/images/Logo_web_transparant.png'
                             ]
                         ],
-                        1 => [
+                        Str::uuid()->toString() => [
                             'blade' => 'feature-icons',
                             'content' => [
                                 'items' => [
-                                    0 => [
+                                    Str::uuid()->toString() => [
                                         'icon' => 'wrench',
                                         'head' => 'Reperaties',
                                         'body' => 'Voor reparatie en onderhoud bent u aan het juiste adres.'
                                     ],
-                                    1 => [
+                                    Str::uuid()->toString() => [
                                         'icon' => 'energy',
                                         'head' => 'Presentatie',
                                         'body' => 'We halen alles uit uw auto!',
                                     ],
-                                    2 => [
+                                    Str::uuid()->toString() => [
                                         'icon' => 'chemistry',
                                         'head' => 'Stijl',
                                         'body' => 'Geef je auto een eigen touch en wees uniek.',
@@ -113,7 +133,7 @@ class PagesController extends BaseController
                                 'item_count' => 3,
                             ]
                         ],
-                        2 => [
+                        Str::uuid()->toString() => [
                             'blade' => 'showcase',
                             'content' => [
                                 'items' => [
@@ -135,7 +155,7 @@ class PagesController extends BaseController
                                 'item_count' => 2,
                             ]
                         ],
-                        3 => [
+                        Str::uuid()->toString() => [
                             'blade' => 'social-media',
                             'content' => [
                                 'head' => 'Je kunt me vinden op sociale media!',

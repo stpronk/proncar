@@ -5,33 +5,26 @@ namespace App\Http\Controllers\Api;
 use App\Models\Content;
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class ContentController extends BaseController
 {
     public function store(Request $request)
     {
-        dd($request->all());
+        $path = $request->path.'.'.$request->uuid.'.'.$request->change;
 
-        $uuid = $request->uuid ?? Str::uuid();
+        $content = Content::where('path', $path)->first();
 
-        $content = Content::firstOrNew([
-            'selector' => $request->selector,
-            'uuid' => $uuid,
-        ]);
-
-        $content->content = $request->data;
-
-        if($request->image) {
-            $image = $request->image;  // your base64 encoded
-            $image = str_replace('data:image/jpeg;base64,', '', $image);
-            $image = str_replace(' ', '+', $image);
-            Storage::disk('public')->put($uuid . '.jpeg', base64_decode($image));
+        if(!$content) {
+            $content = new Content();
         }
+
+        $content->uuid = $request->uuid;
+        $content->page = $request->page;
+        $content->path = $path;
+        $content->data = $request->data;
 
         $content->save();
 
-        return Response()->json(['message' => 'success'], 200);
+        dd($request->all(), $content);
     }
 }

@@ -1,1 +1,77 @@
-[{"blade":"header","content":{"overlay":true,"logo":true,"alt":"proncar_header","src":"\/images\/Logo_web_transparant.png"}},{"blade":"feature-icons","content":{"items":[{"icon":"wrench","head":"Reperaties","body":"Voor reparatie en onderhoud bent u aan het juiste adres."},{"icon":"energy","head":"Presentatie","body":"We halen alles uit uw auto!"},{"icon":"chemistry","head":"Stijl","body":"Geef je auto een eigen touch en wees uniek."}],"item_count":3}},{"blade":"showcase","content":{"items":[{"image":"images\/bg-showcase-1.jpg","head":"Waarmee kunnen wij u helpen?","body":"We doen veel aan het verbeteren en repareren van uw auto. Heeft u iets speciaals nodig of wilt u gewoon kijken wat we voor u in petto hebben. Bekijk het hier!","route_key":"activities","route_name":"Activiteiten"},{"image":"images\/bg-showcase-2.jpg","head":"We hebben veel gedaan!","body":"We hebben alle soorten auto's gedaan, willen we zien wat we allemaal hebben gedaan? Of wil je eens rondkijken?","route_key":"portfolio","route_name":"Portfolio"}],"item_count":2}},{"blade":"social-media","content":{"head":"Je kunt me vinden op sociale media!","contact":{"route":"contact","head":"Neem contact op!"},"items":[{"icon":"social-facebook","href":"https:\/\/www.facebook.com\/Proncar-468839900135515\/"},{"icon":"social-instagram","href":"https:\/\/www.instagram.com\/proncar_zoetermeer\/"}],"item_count":2}}]
+{
+  "64d26630-4547-4712-b91c-dd3b017b7863": {
+    "blade": "header",
+    "content": {
+      "overlay": true,
+      "logo": true,
+      "alt": "proncar_header",
+      "src": "\/images\/Logo_web_transparant.png"
+    }
+  },
+  "0b6537dd-fa68-4bc5-baf8-7474525dd2f0": {
+    "blade": "feature-icons",
+    "content": {
+      "items": {
+        "6c4636dc-7043-44d0-8957-bde2510f29d5": {
+          "icon": "wrench",
+          "head": "Reperaties",
+          "body": "Voor reparatie en onderhoud bent u aan het juiste adres."
+        },
+        "7817950a-50c3-4f3a-b761-a8a18c14c871": {
+          "icon": "energy",
+          "head": "Presentatie",
+          "body": "We halen alles uit uw auto!"
+        },
+        "bb95db89-74cf-44ea-ad17-d8495b4917e6": {
+          "icon": "chemistry",
+          "head": "Stijl",
+          "body": "Geef je auto een eigen touch en wees uniek."
+        }
+      },
+      "item_count": 3
+    }
+  },
+  "09c4d9b7-84df-404f-877c-89a27e0654e0": {
+    "blade": "showcase",
+    "content": {
+      "items": [
+        {
+          "image": "images\/bg-showcase-1.jpg",
+          "head": "Waarmee kunnen wij u helpen?",
+          "body": "We doen veel aan het verbeteren en repareren van uw auto. Heeft u iets speciaals nodig of wilt u gewoon kijken wat we voor u in petto hebben. Bekijk het hier!",
+          "route_key": "activities",
+          "route_name": "Activiteiten"
+        },
+        {
+          "image": "images\/bg-showcase-2.jpg",
+          "head": "We hebben veel gedaan!",
+          "body": "We hebben alle soorten auto's gedaan, willen we zien wat we allemaal hebben gedaan? Of wil je eens rondkijken?",
+          "route_key": "portfolio",
+          "route_name": "Portfolio"
+        }
+      ],
+      "item_count": 2
+    }
+  },
+  "a1e2bb74-d40e-40a1-be1e-5a581d3f6fa4": {
+    "blade": "social-media",
+    "content": {
+      "head": "Je kunt me vinden op sociale media!",
+      "contact": {
+        "route": "contact",
+        "head": "Neem contact op!"
+      },
+      "items": [
+        {
+          "icon": "social-facebook",
+          "href": "https:\/\/www.facebook.com\/Proncar-468839900135515\/"
+        },
+        {
+          "icon": "social-instagram",
+          "href": "https:\/\/www.instagram.com\/proncar_zoetermeer\/"
+        }
+      ],
+      "item_count": 2
+    }
+  }
+}

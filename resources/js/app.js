@@ -5,6 +5,7 @@ import VTooltip from 'v-tooltip'
 
 import VueLaroute from 'vue-laroute';
 import routes from './laroute';
+import UUID from 'vue-uuid';
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -29,6 +30,7 @@ library.add(
     faSpinner
 );
 
+Vue.use(UUID);
 Vue.use(VTooltip);
 Vue.use(VueLaroute, {
     routes,

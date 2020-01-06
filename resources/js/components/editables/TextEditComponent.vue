@@ -78,11 +78,13 @@
 
     export default {
         props: {
-            selector: {type: String, required: true},
+            page: {type: String, required: true},
+            path: {type: String, required: true},
+            uuid: {type: String, required: true},
+            change: {type: String, required: true},
             body: {type: String, required: true},
             classes: {type: String, required: false},
             options: {type: Object, required: false},
-            uuid: {type: String, required: false}
         },
         components: {
             EditorContent,
@@ -91,11 +93,13 @@
         data() {
             return {
                 originalData: {
-                    selector: this.selector,
+                    page: this.page,
+                    path: this.path,
+                    uuid: this.uuid,
                     body: this.body,
+                    change: this.change,
                     classes: this.classes,
-                    options: this.options,
-                    uuid: this.uuid
+                    options: this.options
                 },
                 data: this.body,
                 images: {},
@@ -116,7 +120,6 @@
 
                     onUpdate: ( { getHTML } ) => {
                         this.data = getHTML();
-
                     },
 
                     onBlur: () => {
@@ -164,10 +167,11 @@
 
                 // Ajax call to the backend
                 this.axios.post('/store', {
-                    selector: this.selector,
+                    page: this.page,
+                    path: this.path,
                     uuid: this.uuid,
+                    change: this.change,
                     data: this.data,
-                    image: src
                 }).then(response => {
                     vm.processingData = false;
                     vm.originalData.body = data;

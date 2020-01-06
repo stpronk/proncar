@@ -32,13 +32,20 @@
 
         <nav v-if="this.auth" class="navbar navbar-expand-md navbar-light bg-dark sticky-top-top shadow-sm py-0 h-auto">
             <div class="container">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="icon-pencil text-primary"></i>
+                        </a>
+                    </li>
+                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
 
 
-                    <li v-if="editable" class="nav-item px-1">
-                        <a class="nav-link" :href="$routes.route(this.editable+'.edit')">
+                    <li class="nav-item px-1">
+                        <a class="nav-link" :href="$routes.route(this.page)">
                             <i class="icon-pencil text-primary"></i>
                         </a>
                     </li>
@@ -74,7 +81,6 @@
               required: false
             },
             auth: {
-              type: Boolean,
               required: false
             }
         },
