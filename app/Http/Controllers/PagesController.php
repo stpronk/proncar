@@ -54,7 +54,6 @@ class PagesController extends BaseController
     {
         $page = $pageRequest->getPageAttributes();
 
-//        dd($page);
         if (Auth::check()) {
             $page = $this->showConcept($page);
         }
@@ -70,10 +69,8 @@ class PagesController extends BaseController
         $content = Content::where('page', $page['index'])->get();
 
         foreach ($content as $item) {
-            Arr::set($page, 'sections.'.$item->path, $item->data);
+            Arr::set($page, 'sections.' . $item->path, $item->data);
         }
-
-//        dd($page);
 
         return $page;
     }

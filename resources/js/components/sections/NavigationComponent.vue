@@ -32,22 +32,14 @@
 
         <nav v-if="this.auth" class="navbar navbar-expand-md navbar-light bg-dark sticky-top-top shadow-sm py-0 h-auto">
             <div class="container">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <i class="icon-pencil text-primary"></i>
-                        </a>
-                    </li>
-                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
 
-
-                    <li class="nav-item px-1">
-                        <a class="nav-link" :href="$routes.route(this.page)">
-                            <i class="icon-pencil text-primary"></i>
-                        </a>
+                    <li v-if="page !== 'admin'" class="nav-item px-1">
+                        <button class="nav-link btn btn-link" type="button" v-on:click="publish($routes)" :disabled="this.publishing">
+                            <i class="icon-note text-primary"></i>
+                        </button>
                     </li>
 
                     <li class="nav-item px-1">
@@ -58,7 +50,7 @@
 
 
                     <li class="nav-item px-1">
-                        <button class="nav-link btn btn-link" type="button" v-on:click="logout($routes)">
+                        <button class="nav-link btn btn-link" type="button" v-on:click="logout($routes)" :disabled="this.loggingout">
                             <i class="icon-logout text-primary"></i>
                         </button>
                     </li>
@@ -87,15 +79,34 @@
         mounted(){},
         data() {
             return {
-                '$routes': window.$routes
+                '$routes': window.$routes,
+                publishing: false,
+                loggingout: false
             }
         },
         methods: {
-            logout: ($routes) => {
+
+            logout ($routes) {
+                this.loggingout = true;
                 axios.post($routes.route('logout')).then((response) => {
-                    window.location.href = $routes.route('welcome')
+                    window.location.href = $routes.route('welcome');
+                    this.logout = false;
                 }).catch(error => {
-                    window.location.reload()
+                    window.location.reload();
+                    this.logout = false;
+                });
+            },
+
+            publish ($routes) {
+                this.publishing = true;
+                axios.post($routes.route('content.publish'), {
+                    page: this.page
+                }).then((response) => {
+                  console.log(response.data);
+                  this.publishing = false;
+                }).catch(error => {
+                  alert('Publish failed');
+                  this.publishing = false;
                 });
             }
         }

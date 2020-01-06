@@ -31,6 +31,7 @@ Route::post('/contact', 'DashboardController@contact')->name('dashboard.contact'
 // Admin panel routes
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/store', 'Api\ContentController@store')->name('content.store');
+    Route::post('/publish', 'Api\ContentController@publish')->name('content.publish');
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', 'DashboardController@index')->name('dashboard.index');

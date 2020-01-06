@@ -6,7 +6,7 @@
 <body>
     <div id="app">
         <navigation-component
-                :page="{{ $index ?? 'admin' }}"
+                page="{{ $index ?? 'admin' }}"
                 :items="{{ json_encode($nav) }}"
                 :auth="{{ is_null(Auth::user()) ? 0 : 1 }}"
         ></navigation-component>
