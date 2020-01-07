@@ -134,14 +134,14 @@ class PagesController extends BaseController
                             'blade' => 'showcase',
                             'content' => [
                                 'items' => [
-                                    0 => [
+                                    Str::uuid()->toString() => [
                                         'image'      => 'images/bg-showcase-1.jpg',
                                         'head'       => 'Waarmee kunnen wij u helpen?',
                                         'body'       => 'We doen veel aan het verbeteren en repareren van uw auto. Heeft u iets speciaals nodig of wilt u gewoon kijken wat we voor u in petto hebben. Bekijk het hier!',
                                         'route_key'  => 'activities',
                                         'route_name' => 'Activiteiten',
                                     ],
-                                    1 => [
+                                    Str::uuid()->toString() => [
                                         'image'      => 'images/bg-showcase-2.jpg',
                                         'head'       => 'We hebben veel gedaan!',
                                         'body'       => 'We hebben alle soorten auto\'s gedaan, willen we zien wat we allemaal hebben gedaan? Of wil je eens rondkijken?',
@@ -317,9 +317,10 @@ class PagesController extends BaseController
                         'class'  => null,
                     ],
                     'sections' => [
-                        0 => [
+                        Str::uuid()->toString() => [
                         'blade'   => 'text',
-                        'content' => ['body' => '<h1>HTML Ipsum Presents</h1>
+                        'content' => [
+                            Str::uuid()->toString() => ['body' => '<h1>HTML Ipsum Presents</h1>
 
 <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
 
@@ -338,7 +339,7 @@ class PagesController extends BaseController
    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
    <li>Aliquam tincidunt mauris eu risus.</li>
 </ul>'
-                    ]
+                    ]]
                         ]],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
@@ -349,7 +350,6 @@ class PagesController extends BaseController
 
         foreach ($page_index['pages'] as $key => &$values) {
             $this->CreateValueStore( storage_path('content/pages/'), $key, $values['sections'], true);
-            $this->CreateValueStore( storage_path('concept/pages/'), $key, $values['sections'], true);
             $sections[$key] = $values['sections'];
             unset($values['sections']);
         }

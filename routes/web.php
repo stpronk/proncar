@@ -32,6 +32,8 @@ Route::post('/contact', 'DashboardController@contact')->name('dashboard.contact'
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/store', 'Api\ContentController@store')->name('content.store');
     Route::post('/publish', 'Api\ContentController@publish')->name('content.publish');
+    Route::post('/advanced', 'Api\ContentController@getValueStoreData')->name('content.advanced');
+    Route::post('/advanced/store', 'Api\ContentController@storeValueStoreData')->name('content.advanced.store');
 
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', 'DashboardController@index')->name('dashboard.index');
