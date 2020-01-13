@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\PageRequest;
+use App\Mail\ContactForm;
 use App\Models\Content;
 use App\Models\Pages;
 use App\Models\Sections;
 use App\Traits\ValueStorageTrait;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
@@ -73,6 +77,21 @@ class PagesController extends BaseController
         }
 
         return $page;
+    }
+
+    public function contact(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'nullable|string|min:10|max:10',
+            'subject' => 'required|string|min:4',
+            'message' => 'required|string|min:10|max:300'
+        ]);
+
+        Mail::to(env('MAIL_TO', 'stpronk@gmail.com'))->send(new ContactForm($request->all()));
+
+        return response()->json(['massage' => 'message has been send'], 200);
     }
 
     public function generatePages()
@@ -194,9 +213,18 @@ class PagesController extends BaseController
                     ],
                     'template' => [
                         'id'    => 1,
-                        'blade' => 'about',
+                        'blade' => 'default',
                     ],
-                    'sections' => [],
+                    'sections' => [
+                        Str::uuid()->toString() => [
+                            'blade'   => 'text',
+                            'content' => [
+                                Str::uuid()->toString() => [
+                                    'body' => 'Something'
+                                ]
+                            ]
+                        ]
+                    ],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
                     'hidden'   => false,
@@ -217,9 +245,18 @@ class PagesController extends BaseController
                     ],
                     'template' => [
                         'id'    => 1,
-                        'blade' => 'activities',
+                        'blade' => 'default',
                     ],
-                    'sections' => [],
+                    'sections' => [
+                        Str::uuid()->toString() => [
+                            'blade'   => 'text',
+                            'content' => [
+                                Str::uuid()->toString() => [
+                                    'body' => 'Something'
+                                ]
+                            ]
+                        ]
+                    ],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
                     'hidden'   => false,
@@ -240,9 +277,17 @@ class PagesController extends BaseController
                     ],
                     'template' => [
                         'id'    => 1,
-                        'blade' => 'portfolio',
+                        'blade' => 'default',
                     ],
-                    'sections' => [],
+                    'sections' => [
+                        Str::uuid()->toString() => [
+                            'blade'   => 'text',
+                            'content' => [
+                                Str::uuid()->toString() => [
+                                    'body' => 'Something'
+                                ]
+                            ]
+                        ]],
                     'type'     => 'get',
                     'uuid'     => Str::uuid(),
                     'hidden'   => false
@@ -266,14 +311,14 @@ class PagesController extends BaseController
                         'blade' => 'default',
                     ],
                     'sections' => [
-                        0 => [
+                        Str::uuid()->toString() => [
                             'blade'   => 'contact',
                             'content' => [
                                 'action' => 'dashboard.contact',
                                 'method' => 'POST'
                             ]
                         ],
-                        1 => [
+                        Str::uuid()->toString() => [
                             'blade' => 'social-media',
                             'content' => [
                                 'head' => 'Je kunt me vinden op sociale media!',
@@ -282,11 +327,11 @@ class PagesController extends BaseController
                                     'head' => 'Neem contact op!'
                                 ],
                                 'items' => [
-                                    0 => [
+                                    Str::uuid()->toString() => [
                                         'icon' => 'social-facebook',
                                         'href' => 'https://www.facebook.com/Proncar-468839900135515/'
                                     ],
-                                    1 => [
+                                    Str::uuid()->toString() => [
                                         'icon' => 'social-instagram',
                                         'href' => 'https://www.instagram.com/proncar_zoetermeer/',
                                     ],
@@ -355,8 +400,6 @@ class PagesController extends BaseController
         }
 
         $this->UpdateOrCreateValueStore($page_index, storage_path('content/'), 'pages_index');
-        $this->UpdateOrCreateValueStore($page_index, storage_path('concept/'), 'pages_index');
-
 
         dd(
             'valueStore:', $this->pages->valueToArray()

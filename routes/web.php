@@ -26,7 +26,7 @@ Route::get('/generate', 'PagesController@generatePages')->name('generate');
 // Auth routes
 Auth::routes(['register' => true]);
 
-Route::post('/contact', 'DashboardController@contact')->name('dashboard.contact');
+Route::post('/contact', 'PagesController@contact')->name('contact.send');
 
 // Admin panel routes
 Route::group(['middleware' => 'auth'], function () {

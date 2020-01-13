@@ -35,11 +35,4 @@ class DashboardController extends BaseController
 
         return response()->json(['message' => 'Success'], 200);
     }
-
-    public function contact(Request $request)
-    {
-        Mail::to(env('MAIL_TO', 'stpronk@gmail.com'))->send(new ContactForm($request->all()));
-
-        return back();
-    }
 }
