@@ -26,6 +26,10 @@
 @import "components/contact-form";
 @import "components/text-section";
 
+html, body {
+  overflow-x: hidden
+}
+
 .tooltip {
   display: block !important;
   z-index: 10000;
@@ -133,6 +137,15 @@
     visibility: visible;
     opacity: 1;
     transition: opacity .15s;
+  }
+}
+
+.font-size {
+  &-normal {
+    font-size: 14px;
+  }
+  &-initial {
+    font-size: initial;
   }
 }
 

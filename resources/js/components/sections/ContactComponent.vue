@@ -1,6 +1,27 @@
 <template>
-    <section class="contact-form row justify-content-center">
-        <div class="col-6 row">
+    <section class="my-5 row justify-content-center">
+        <div class="col-12 col-md-5 col-lg-6 row" v-for="content in items">
+            <div class="form-group col-12 align-middle lead d-flex flex-column">
+
+                <h2 v-html="content.title" class="d-flex my-2"></h2>
+                <div v-html="content.body" class="d-flex my-2"></div>
+                <div class="d-flex flex-column">
+                    <div class="d-flex my-2 mx-2 mx-md-0">
+                        <i class="mx-2 my-auto text-primary icon-phone"></i>
+                        <div class="flex-fill" v-html="content.phone"></div>
+                    </div>
+                    <div class="d-flex my-2 mx-2 mx-md-0">
+                        <i class="mx-2 my-auto text-primary icon-envelope"></i>
+                        <div class="flex-fill" v-html="content.email"></div>
+                    </div>
+                    <div class="d-flex my-2 mx-2 mx-md-0">
+                        <i class="mx-2 my-auto text-primary icon-home">
+                        </i><div class="flex-fill" v-html="content.kvk"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-6 row">
             <div class="form-group col-12">
                 <label for="name" class="col-form-label d-none">Name </label>
                 <input id="name"
@@ -87,11 +108,23 @@
 </template>
 <script>
     export default {
-        props: {
-            content: {
-              type: Object, required: true
-            }
+      props: {
+        content: {
+          type: Object,
+          required: true
         },
+        page: {
+          type: String,
+          required: true
+        },
+        uuid: {
+          type: String,
+          required: true
+        },
+        auth: {
+          required: true
+        },
+      },
         data () {
           return {
             '$routes': window.$routes,
@@ -103,8 +136,27 @@
               subject: '',
               message: ''
             },
+            path: this.uuid+'.content',
             sending: false,
             approved: false,
+          }
+        },
+        computed: {
+          items: function () {
+            const array = [];
+            Object.entries(this.content).forEach(([key, content]) => {
+              array.push({
+                page: this.page,
+                path: this.uuid+'.content',
+                uuid: key,
+                title: content.title,
+                body: content.body,
+                phone: content.phone,
+                email: content.email,
+                kvk: content.kvk,
+              })
+            });
+            return array;
           }
         },
         methods: {

@@ -312,32 +312,24 @@ class PagesController extends BaseController
                     ],
                     'sections' => [
                         Str::uuid()->toString() => [
-                            'blade'   => 'contact',
+                            'blade' => 'header',
                             'content' => [
-                                'action' => 'dashboard.contact',
-                                'method' => 'POST'
+                                'overlay' => true,
+                                'logo' => false,
+                                'alt'  => 'proncar_header',
                             ]
                         ],
                         Str::uuid()->toString() => [
-                            'blade' => 'social-media',
+                            'blade'   => 'contact',
                             'content' => [
-                                'head' => 'Je kunt me vinden op sociale media!',
-                                'contact' => [
-                                    'route' => 'contact',
-                                    'head' => 'Neem contact op!'
-                                ],
-                                'items' => [
-                                    Str::uuid()->toString() => [
-                                        'icon' => 'social-facebook',
-                                        'href' => 'https://www.facebook.com/Proncar-468839900135515/'
-                                    ],
-                                    Str::uuid()->toString() => [
-                                        'icon' => 'social-instagram',
-                                        'href' => 'https://www.instagram.com/proncar_zoetermeer/',
-                                    ],
-                                ],
-                                'item_count' => 2,
-                            ]
+                                Str::uuid()->toString() => [
+                                    'title'       => 'Kom in contact met me!',
+                                    'body'        => 'Heb je vragen, problemen of zelfs voorstellen? Wees niet bang om me een berichtje te sturen. Samen met een bakje koffie komen we overal uit!',
+                                    'phone'       => '0683776295',
+                                    'email'       => 'info@proncar.nl',
+                                    'kvk'         => '5567802423',
+                                ]
+                            ],
                         ],
                     ],
                     'type'     => 'get',
