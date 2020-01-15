@@ -1,5 +1,5 @@
 <template>
-    <header :class="{'d-none d-md-block': this.content.logo}" class="masthead text-white text-center">
+    <header class="masthead text-white text-center">
 
         <div v-if="this.content.overlay" class="overlay"></div>
 
