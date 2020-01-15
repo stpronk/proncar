@@ -188,8 +188,12 @@ class PagesController extends BaseController
                                         'icon' => 'social-instagram',
                                         'href' => 'https://www.instagram.com/proncar_zoetermeer/',
                                     ],
+                                    2 => [
+                                        'icon' => 'social-youtube',
+                                        'href' => 'https://www.youtube.com/channel/UC6BuEIGDK1nvfBsiPSJ3mrg/',
+                                    ],
                                 ],
-                                'item_count' => 2,
+                                'item_count' => 3,
                             ]
                         ],
                     ],
