@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -32,7 +33,7 @@ class ContactForm extends Mailable
     {
         return $this->from(env('MAIL_FROM'))
             ->to(env('MAIL_TO'))
-            ->subject('Contact form Proncar | '. $this->mail['subject'])
+            ->subject('Proncar | '. $this->mail['subject'] .' from ' . $this->mail['name'] . ' | ' . Carbon::now()->format('d/m/Y H:i:s'))
             ->view('mail.contact')->with([
                 'email' => $this->mail['email'],
                 'phone' => $this->mail['phone'],
