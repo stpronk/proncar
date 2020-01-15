@@ -23,10 +23,8 @@ foreach (page_index() as $key => $page) {
     });
 };
 
-Route::get('/generate', 'PagesController@generatePages')->name('generate');
-
 // Auth routes
-Auth::routes(['register' => true]);
+Auth::routes(['register' => false]);
 
 Route::post('/contact', 'PagesController@contact')->name('contact.send');
 
@@ -45,3 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 });
+
+if(env('APP_DEBUG')) {
+    Route::get('/generate', 'PagesController@generatePages')->name('generate');
+}
+
